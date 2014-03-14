@@ -1,0 +1,57 @@
+{
+	"name": "object.assign",
+	"version": "0.1.0",
+	"author": "Jordan Harband",
+	"description": "ES6 spec-compliant Object.assign shim. From https://github.com/es-shims/es6-shim",
+	"license": "MIT",
+	"main": "index.js",
+	"scripts": {
+		"test": "node test/index.js",
+		"coverage": "covert test/*.js",
+		"coverage-quiet": "covert test/*.js --quiet"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ljharb/object.assign.git"
+	},
+	"keywords": [
+		"Object.assign",
+		"assign",
+		"ES6",
+		"extend",
+		"$.extend",
+		"jQuery",
+		"_.extend",
+		"Underscore"
+	],
+	"dependencies": {
+		"object-keys": "~0.5.1"
+	},
+	"devDependencies": {
+		"is": "~0.3.0",
+		"tape": "~2.10.2",
+		"covert": "~0.3.1"
+	},
+	"testling": {
+		"files": "test/index.js",
+		"browsers": [
+			"iexplore/6.0..latest",
+			"firefox/3.0..6.0",
+			"firefox/15.0..latest",
+			"firefox/nightly",
+			"chrome/4.0..10.0",
+			"chrome/20.0..latest",
+			"chrome/canary",
+			"opera/10.0..latest",
+			"opera/next",
+			"safari/4.0..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest",
+			"android-browser/4.2"
+		]
+	},
+	"engines": {
+		"node": ">= 0.4"
+	}
+}
+
