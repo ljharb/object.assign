@@ -112,15 +112,15 @@ Implementation taken directly from [es6-shim]([11]) and modified locally.
 Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/object.assign
-[2]: http://vb.teelaun.ch/ljharb/object-assign.svg
-[3]: https://travis-ci.org/ljharb/object-assign.png
-[4]: https://travis-ci.org/ljharb/object-assign
-[5]: https://david-dm.org/ljharb/object-assign.png
-[6]: https://david-dm.org/ljharb/object-assign
-[7]: https://david-dm.org/ljharb/object-assign/dev-status.png
-[8]: https://david-dm.org/ljharb/object-assign#info=devDependencies
-[9]: https://ci.testling.com/ljharb/object-assign.png
-[10]: https://ci.testling.com/ljharb/object-assign
+[2]: http://vb.teelaun.ch/ljharb/object.assign.svg
+[3]: https://travis-ci.org/ljharb/object.assign.png
+[4]: https://travis-ci.org/ljharb/object.assign
+[5]: https://david-dm.org/ljharb/object.assign.png
+[6]: https://david-dm.org/ljharb/object.assign
+[7]: https://david-dm.org/ljharb/object.assign/dev-status.png
+[8]: https://david-dm.org/ljharb/object.assign#info=devDependencies
+[9]: https://ci.testling.com/ljharb/object.assign.png
+[10]: https://ci.testling.com/ljharb/object.assign
 [11]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
 [12]: https://nodei.co/npm/object.assign.png?downloads=true&stars=true
 
