@@ -115,9 +115,9 @@ Simply clone the repo, `npm install`, and run `npm test`
 [2]: http://vb.teelaun.ch/ljharb/object.assign.svg
 [3]: https://travis-ci.org/ljharb/object.assign.png
 [4]: https://travis-ci.org/ljharb/object.assign
-[5]: https://david-dm.org/ljharb/object.assign.png
+[5]: https://david-dm.org/ljharb/object.assign.svg?theme=shields.io
 [6]: https://david-dm.org/ljharb/object.assign
-[7]: https://david-dm.org/ljharb/object.assign/dev-status.png
+[7]: https://david-dm.org/ljharb/object.assign/dev-status.svg?theme=shields.io
 [8]: https://david-dm.org/ljharb/object.assign#info=devDependencies
 [9]: https://ci.testling.com/ljharb/object.assign.png
 [10]: https://ci.testling.com/ljharb/object.assign
