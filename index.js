@@ -1,7 +1,7 @@
 "use strict";
 
 // modified from https://github.com/es-shims/es6-shim
-var keys = Object.keys || require('object-keys');
+var keys = require('object-keys');
 
 var assignShim = function assign(target, source) {
 	var props = keys(source);
