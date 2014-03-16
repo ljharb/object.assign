@@ -4,10 +4,11 @@
 var keys = Object.keys || require('object-keys');
 
 var assignShim = function assign(target, source) {
-	return keys(source).reduce(function (target, key) {
-		target[key] = source[key];
-		return target;
-	}, target);
+	var props = keys(source);
+	for (var i = 0; i < props.length; ++i) {
+		target[props[i]] = source[props[i]];
+	}
+	return target;
 };
 
 assignShim.shim = function shimObjectAssign() {
