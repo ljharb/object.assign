@@ -1,0 +1,32 @@
+{
+	"name": "object.assign",
+	"main": "index.js",
+	"version": "0.2.0",
+	"homepage": "https://github.com/ljharb/object.assign",
+	"authors": [
+		"Jordan Harband <ljharb@gmail.com>"
+	],
+	"description": "ES6 spec-compliant Object.assign shim.",
+	"moduleType": [
+		"node"
+	],
+	"keywords": [
+		"Object.assign",
+		"assign",
+		"ES6",
+		"extend",
+		"$.extend",
+		"jQuery",
+		"_.extend",
+		"Underscore"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
+
