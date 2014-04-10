@@ -6,8 +6,8 @@ test('error cases', function (t) {
 	var target = {};
 	t.throws(function () { assign(null); }, TypeError, 'target must be an object');
 	t.throws(function () { assign(target, null); }, TypeError, 'source 1 must be an object');
-	t.throws(function () { assign(target, { a: 1 }, undefined); }, TypeError, 'source 2 must be an object');
-	t.deepEqual(keys(target), [], 'target is unmodified when errors are thrown');
+	t.throws(function () { assign(target, { a: 1 }, undefined, { b: 2 }); }, TypeError, 'source 2 must be an object');
+	t.deepEqual(target, { a: 1 }, 'target is partially modified when errors are thrown');
 	t.end();
 });
 
