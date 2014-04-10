@@ -116,7 +116,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/object.assign
 [2]: http://vb.teelaun.ch/ljharb/object.assign.svg
-[3]: https://travis-ci.org/ljharb/object.assign.png
+[3]: https://travis-ci.org/ljharb/object.assign.svg
 [4]: https://travis-ci.org/ljharb/object.assign
 [5]: https://david-dm.org/ljharb/object.assign.svg?theme=shields.io
 [6]: https://david-dm.org/ljharb/object.assign
