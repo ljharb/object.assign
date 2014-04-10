@@ -1,5 +1,15 @@
 var test = require('tape');
 var assign = require('../index.js');
+var keys = require('object-keys');
+
+test('error cases', function (t) {
+	var target = {};
+	t.throws(function () { assign(null); }, TypeError, 'target must be an object');
+	t.throws(function () { assign(target, null); }, TypeError, 'source 1 must be an object');
+	t.throws(function () { assign(target, { a: 1 }, undefined); }, TypeError, 'source 2 must be an object');
+	t.deepEqual(keys(target), [], 'target is unmodified when errors are thrown');
+	t.end();
+});
 
 test('returns the modified target object', function (t) {
 	var target = {};
@@ -8,10 +18,24 @@ test('returns the modified target object', function (t) {
 	t.end();
 });
 
+test('has the right length', function (t) {
+	t.equal(assign.length, 2, 'length is 2 => 2 required arguments');
+	t.end();
+});
+
 test('merge two objects', function (t) {
 	var target = { a: 1 };
 	var returned = assign(target, { b: 2 });
 	t.deepEqual(returned, { a: 1, b: 2 }, 'returned object has properties from both');
+	t.end();
+});
+
+test('merge N objects', function (t) {
+	var target = { a: 1 };
+	var source1 = { b: 2 };
+	var source2 = { c: 3 };
+	var returned = assign(target, source1, source2);
+	t.deepEqual(returned, { a: 1, b: 2, c: 3 }, 'returned object has properties from all sources');
 	t.end();
 });
 

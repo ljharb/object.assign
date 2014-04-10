@@ -8,6 +8,10 @@
 
 An Object.assign shim. Invoke its "shim" method to shim Object.assign if it is unavailable.
 
+Takes a minimum of 2 object arguments: `target` and `source`.
+Takes a variable sized list of source arguments - at least 1, as many as you want.
+Throws a TypeError if any arguments are not objects.
+
 Most common usage:
 ```js
 var assign = Object.assign || require('object.assign');
@@ -32,7 +36,7 @@ var expected = {
 var assign = require('object.assign');
 var assert = require('assert');
 
-[source1, source2, sourceN].reduce(Object.assign, target);
+assign(target, source1, source2, sourceN);
 assert.deepEqual(target, expected); // AWESOME!
 ```
 
@@ -44,13 +48,15 @@ var target = {
 	b: true,
 	c: true
 };
-var source = {
+var source1 = {
 	c: false,
-	d: false,
+	d: false
+};
+var sourceN = {
 	e: false
 };
 
-var assigned = assign(target, source);
+var assigned = assign(target, source1, sourceN);
 assert.equal(target, assigned); // returns the target object
 assert.deepEqual(assigned, {
 	a: true,
@@ -104,9 +110,6 @@ var source = {
 
 assert.deepEqual(Object.assign(target, source), assign(target, source));
 ```
-
-## Source
-Implementation taken directly from [es6-shim]([11]) and modified locally.
 
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
