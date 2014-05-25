@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"is": "~0.3.0",
-		"tape": "~2.12.3",
+		"tape": "~2.13.1",
 		"covert": "~0.4.0"
 	},
 	"testling": {
