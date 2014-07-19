@@ -21,10 +21,10 @@ var assignShim = function assign(target, source) {
 };
 
 assignShim.shim = function shimObjectAssign() {
-    if (!Object.assign) {
-        Object.assign = assignShim;
-    }
-    return Object.assign || assignShim;
+	if (!Object.assign) {
+		Object.assign = assignShim;
+	}
+	return Object.assign || assignShim;
 };
 
 module.exports = assignShim;
