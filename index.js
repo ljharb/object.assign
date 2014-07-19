@@ -1,7 +1,7 @@
 "use strict";
 
 // modified from https://github.com/es-shims/es6-shim
-var keys = require('object-keys');
+var keys = Object.keys || require('object-keys');
 var isObject = function (obj) {
 	return typeof obj !== 'undefined' && obj !== null;
 };
