@@ -3,12 +3,13 @@
 // modified from https://github.com/es-shims/es6-shim
 var keys = require('object-keys');
 var isObject = function (obj) {
-	return obj && typeof obj === 'object';
+	return typeof obj !== 'undefined' && obj !== null;
 };
 
 var assignShim = function assign(target, source) {
 	var s, i, props;
 	if (!isObject(target)) { throw new TypeError('target must be an object'); }
+	target = Object(target);
 	for (s = 1; s < arguments.length; ++s) {
 		source = arguments[s];
 		if (!isObject(source)) { throw new TypeError('source ' + s + ' must be an object'); }
