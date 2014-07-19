@@ -30,6 +30,26 @@ test('merge two objects', function (t) {
 	t.end();
 });
 
+test('works with functions', function (t) {
+	var target = function () {};
+	target.a = 1;
+	var returned = assign(target, { b: 2 });
+	t.equal(target, returned, 'returned object is target');
+	t.equal(returned.a, 1);
+	t.equal(returned.b, 2);
+	t.end();
+});
+
+test('works with primitives', function (t) {
+	var target = 2;
+	var source = { b: 42 };
+	var returned = assign(target, source);
+	t.equal(Object.prototype.toString.call(returned), '[object Number]', 'returned is object form of number primitive');
+	t.equal(Number(returned), target, 'returned and target have same valueOf');
+	t.equal(returned.b, source.b);
+	t.end();
+});
+
 test('merge N objects', function (t) {
 	var target = { a: 1 };
 	var source1 = { b: 2 };
