@@ -12,7 +12,6 @@ var assignShim = function assign(target, source1) {
 	objTarget = Object(target);
 	for (s = 1; s < arguments.length; ++s) {
 		source = arguments[s];
-		if (!isObject(source)) { throw new TypeError('source ' + s + ' must be an object'); }
 		props = keys(Object(source));
 		for (i = 0; i < props.length; ++i) {
 			objTarget[props[i]] = source[props[i]];

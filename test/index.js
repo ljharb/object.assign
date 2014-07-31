@@ -5,9 +5,12 @@ var keys = require('object-keys');
 test('error cases', function (t) {
 	var target = {};
 	t.throws(function () { assign(null); }, TypeError, 'target must be an object');
-	t.throws(function () { assign(target, null); }, TypeError, 'source 1 must be an object');
-	t.throws(function () { assign(target, { a: 1 }, undefined, { b: 2 }); }, TypeError, 'source 2 must be an object');
-	t.deepEqual(target, { a: 1 }, 'target is partially modified when errors are thrown');
+	t.end();
+});
+
+test('non-object sources', function (t) {
+	t.deepEqual(assign({ a: 1 }, null, { b: 2 }), { a: 1, b: 2 }, 'ignores null source');
+	t.deepEqual(assign({ a: 1 }, { b: 2 }, undefined), { a: 1, b: 2 }, 'ignores undefined source');
 	t.end();
 });
 
