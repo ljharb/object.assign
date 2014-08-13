@@ -29,7 +29,7 @@
 		"object-keys": "~0.6.0"
 	},
 	"devDependencies": {
-		"is": "~0.3.0",
+		"is": "~1.0.0",
 		"tape": "~2.14.0",
 		"covert": "~1.0.0",
 		"jscs": "~1.5.8"
