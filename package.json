@@ -26,7 +26,7 @@
 		"Underscore"
 	],
 	"dependencies": {
-		"object-keys": "~0.6.0"
+		"object-keys": "~1.0.0"
 	},
 	"devDependencies": {
 		"is": "~2.0.0",
