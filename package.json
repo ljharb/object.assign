@@ -32,7 +32,7 @@
 		"is": "~2.0.0",
 		"tape": "~2.14.0",
 		"covert": "~1.0.0",
-		"jscs": "~1.5.8"
+		"jscs": "~1.5.9"
 	},
 	"testling": {
 		"files": "test/index.js",
