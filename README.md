@@ -8,7 +8,7 @@
 
 [![npm badge][12]][npm-url]
 
-[![browser support][9]][10]
+[![browser support][testling-png]][testling-url]
 
 An Object.assign shim. Invoke its "shim" method to shim Object.assign if it is unavailable.
 
@@ -126,8 +126,8 @@ Simply clone the repo, `npm install`, and run `npm test`
 [deps-url]: https://david-dm.org/ljharb/object.assign
 [dev-deps-svg]: https://david-dm.org/ljharb/object.assign/dev-status.svg?theme=shields.io
 [dev-deps-url]: https://david-dm.org/ljharb/object.assign#info=devDependencies
-[9]: https://ci.testling.com/ljharb/object.assign.png
-[10]: https://ci.testling.com/ljharb/object.assign
+[testling-png]: https://ci.testling.com/ljharb/object.assign.png
+[testling-url]: https://ci.testling.com/ljharb/object.assign
 [11]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
 [12]: https://nodei.co/npm/object.assign.png?downloads=true&stars=true
 [license-image]: http://img.shields.io/npm/l/object.assign.svg
