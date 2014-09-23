@@ -1,6 +1,6 @@
 #object.assign <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>
 
-[![Build Status][3]][4]
+[![Build Status][travis-svg]][travis-url]
 [![dependency status][5]][6]
 [![dev dependency status][7]][8]
 [![License][license-image]][license-url]
@@ -120,8 +120,8 @@ Simply clone the repo, `npm install`, and run `npm test`
 
 [npm-url]: https://npmjs.org/package/object.assign
 [npm-version-svg]: http://vb.teelaun.ch/ljharb/object.assign.svg
-[3]: https://travis-ci.org/ljharb/object.assign.svg
-[4]: https://travis-ci.org/ljharb/object.assign
+[travis-svg]: https://travis-ci.org/ljharb/object.assign.svg
+[travis-url]: https://travis-ci.org/ljharb/object.assign
 [5]: https://david-dm.org/ljharb/object.assign.svg?theme=shields.io
 [6]: https://david-dm.org/ljharb/object.assign
 [7]: https://david-dm.org/ljharb/object.assign/dev-status.svg?theme=shields.io
