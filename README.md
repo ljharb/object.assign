@@ -1,8 +1,8 @@
 #object.assign <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>
 
 [![Build Status][travis-svg]][travis-url]
-[![dependency status][5]][6]
-[![dev dependency status][7]][8]
+[![dependency status][deps-svg]][deps-url]
+[![dev dependency status][dev-deps-svg]][dev-deps-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
@@ -122,10 +122,10 @@ Simply clone the repo, `npm install`, and run `npm test`
 [npm-version-svg]: http://vb.teelaun.ch/ljharb/object.assign.svg
 [travis-svg]: https://travis-ci.org/ljharb/object.assign.svg
 [travis-url]: https://travis-ci.org/ljharb/object.assign
-[5]: https://david-dm.org/ljharb/object.assign.svg?theme=shields.io
-[6]: https://david-dm.org/ljharb/object.assign
-[7]: https://david-dm.org/ljharb/object.assign/dev-status.svg?theme=shields.io
-[8]: https://david-dm.org/ljharb/object.assign#info=devDependencies
+[deps-svg]: https://david-dm.org/ljharb/object.assign.svg?theme=shields.io
+[deps-url]: https://david-dm.org/ljharb/object.assign
+[dev-deps-svg]: https://david-dm.org/ljharb/object.assign/dev-status.svg?theme=shields.io
+[dev-deps-url]: https://david-dm.org/ljharb/object.assign#info=devDependencies
 [9]: https://ci.testling.com/ljharb/object.assign.png
 [10]: https://ci.testling.com/ljharb/object.assign
 [11]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
