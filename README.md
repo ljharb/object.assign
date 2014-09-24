@@ -6,7 +6,7 @@
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
-[![npm badge][12]][npm-url]
+[![npm badge][npm-badge-png]][npm-url]
 
 [![browser support][testling-png]][testling-url]
 
@@ -128,8 +128,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 [dev-deps-url]: https://david-dm.org/ljharb/object.assign#info=devDependencies
 [testling-png]: https://ci.testling.com/ljharb/object.assign.png
 [testling-url]: https://ci.testling.com/ljharb/object.assign
-[11]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
-[12]: https://nodei.co/npm/object.assign.png?downloads=true&stars=true
+[npm-badge-png]: https://nodei.co/npm/object.assign.png?downloads=true&stars=true
 [license-image]: http://img.shields.io/npm/l/object.assign.svg
 [license-url]: LICENSE
 [downloads-image]: http://img.shields.io/npm/dm/object.assign.svg
