@@ -1,3 +1,5 @@
+'use strict';
+
 var test = require('tape');
 var assign = require('../index.js');
 var keys = require('object-keys');
