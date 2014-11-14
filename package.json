@@ -31,7 +31,7 @@
 	"devDependencies": {
 		"is": "~2.0.2",
 		"tape": "~3.0.0",
-		"covert": "~1.0.0",
+		"covert": "1.0.0",
 		"jscs": "~1.6.2"
 	},
 	"testling": {
