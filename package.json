@@ -29,10 +29,10 @@
 		"object-keys": "~1.0.1"
 	},
 	"devDependencies": {
-		"is": "~2.0.2",
-		"tape": "~3.0.0",
+		"is": "~2.1.0",
+		"tape": "~3.0.3",
 		"covert": "1.0.0",
-		"jscs": "~1.6.2"
+		"jscs": "~1.7.3"
 	},
 	"testling": {
 		"files": "test/index.js",
