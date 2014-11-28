@@ -80,14 +80,14 @@ var shimmedAssign = assign.shim();
 assert.equal(shimmedAssign, assign);
 
 var target = {
-    a: true,
-    b: true,
-    c: true
+	a: true,
+	b: true,
+	c: true
 };
 var source = {
-    c: false,
-    d: false,
-    e: false
+	c: false,
+	d: false,
+	e: false
 };
 
 var assigned = assign(target, source);
@@ -102,14 +102,14 @@ var shimmedAssign = assign.shim();
 assert.equal(shimmedAssign, Object.assign);
 
 var target = {
-    a: true,
-    b: true,
-    c: true
+	a: true,
+	b: true,
+	c: true
 };
 var source = {
-    c: false,
-    d: false,
-    e: false
+	c: false,
+	d: false,
+	e: false
 };
 
 assert.deepEqual(Object.assign(target, source), assign(target, source));

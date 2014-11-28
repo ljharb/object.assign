@@ -77,33 +77,33 @@ test('only iterates over own keys', function (t) {
 });
 
 test('exports a "shim" function', function (t) {
-    t.equal(typeof assign.shim, 'function', 'assign.shim is a function');
+	t.equal(typeof assign.shim, 'function', 'assign.shim is a function');
 
-    t.test('when Object.assign is present', function (st) {
-        var originalObjectAssign = Object.assign;
-        Object.assign = function () {};
-        var shimmedAssign = assign.shim();
-        st.notEqual(Object.assign, assign, 'Object.assign is not overridden');
-        st.equal(shimmedAssign, Object.assign, 'Object.assign is returned');
-        Object.assign = originalObjectAssign;
-        st.end();
-    });
+	t.test('when Object.assign is present', function (st) {
+		var originalObjectAssign = Object.assign;
+		Object.assign = function () {};
+		var shimmedAssign = assign.shim();
+		st.notEqual(Object.assign, assign, 'Object.assign is not overridden');
+		st.equal(shimmedAssign, Object.assign, 'Object.assign is returned');
+		Object.assign = originalObjectAssign;
+		st.end();
+	});
 
-    t.test('when Object.assign is not present', function (st) {
-        var originalObjectAssign = Object.assign;
-        delete Object.assign;
-        var shimmedAssign = assign.shim();
-        st.equal(Object.assign, assign, 'Object.assign is overridden');
-        st.equal(shimmedAssign, assign, 'shim is returned');
-        Object.assign = originalObjectAssign;
-        st.end();
-    });
+	t.test('when Object.assign is not present', function (st) {
+		var originalObjectAssign = Object.assign;
+		delete Object.assign;
+		var shimmedAssign = assign.shim();
+		st.equal(Object.assign, assign, 'Object.assign is overridden');
+		st.equal(shimmedAssign, assign, 'shim is returned');
+		Object.assign = originalObjectAssign;
+		st.end();
+	});
 
-    t.end();
+	t.end();
 });
 
 test('working with actual shim', function (t) {
-    t.notEqual(Object.assign, assign, 'assign shim is not native Object.assign');
-    t.end();
+	t.notEqual(Object.assign, assign, 'assign shim is not native Object.assign');
+	t.end();
 });
 
