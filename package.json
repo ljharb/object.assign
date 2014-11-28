@@ -1,6 +1,6 @@
 {
 	"name": "object.assign",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"author": "Jordan Harband",
 	"description": "ES6 spec-compliant Object.assign shim. From https://github.com/es-shims/es6-shim",
 	"license": "MIT",
