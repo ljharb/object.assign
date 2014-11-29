@@ -34,9 +34,6 @@
 		"covert": "1.0.0",
 		"jscs": "~1.8.0"
 	},
-	"files": [
-		"index.js"
-	],
 	"testling": {
 		"files": "test/index.js",
 		"browsers": [
