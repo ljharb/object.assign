@@ -35,6 +35,7 @@
 		"jscs": "~1.8.0"
 	},
 	"files": [
+		"CHANGELOG.md",
 		"index.js"
 	],
 	"testling": {
