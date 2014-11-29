@@ -1,3 +1,7 @@
+1.0.3 / 2014-11-29
+==================
+  * Revert "optimize --production installs"
+
 1.0.2 / 2014-11-27
 ==================
   * Update `jscs`, `is`, `object-keys`, `tape`
