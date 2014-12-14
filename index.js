@@ -7,12 +7,12 @@ var canBeObject = function (obj) {
 };
 
 var assignShim = function assign(target, source1) {
-	var objTarget, s, source, i, props;
 	if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
-	objTarget = Object(target);
+	var objTarget = Object(target);
+	var s, source, i, props;
 	for (s = 1; s < arguments.length; ++s) {
-		source = arguments[s];
-		props = keys(Object(source));
+		source = Object(arguments[s]);
+		props = keys(source);
 		for (i = 0; i < props.length; ++i) {
 			objTarget[props[i]] = source[props[i]];
 		}

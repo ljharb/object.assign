@@ -9,7 +9,9 @@
 		"test": "npm run lint && node test/index.js && npm run coverage-quiet",
 		"coverage": "covert test/*.js",
 		"coverage-quiet": "covert test/*.js --quiet",
-		"lint": "jscs *.js */*.js"
+		"lint": "GLOBIGNORE=dist/* ; jscs *.js */*.js",
+		"build": "mkdir -p dist && browserify browser.js > dist/browser.js",
+		"prepublish": "npm run build"
 	},
 	"repository": {
 		"type": "git",
@@ -29,6 +31,7 @@
 		"object-keys": "~1.0.1"
 	},
 	"devDependencies": {
+		"browserify": "~7.0.0",
 		"is": "~2.2.0",
 		"tape": "~3.0.3",
 		"covert": "1.0.0",

@@ -1,0 +1,7 @@
+npm-debug.log
+bower.json
+browser.js
+.npmignore
+.travis.yml
+.jscs.json
+
