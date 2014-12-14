@@ -10,7 +10,7 @@
 		"coverage": "covert test/*.js",
 		"coverage-quiet": "covert test/*.js --quiet",
 		"lint": "GLOBIGNORE=dist/* ; jscs *.js */*.js",
-		"build": "mkdir -p dist && browserify browser.js > dist/browser.js",
+		"build": "mkdir -p dist && browserify browserShim.js > dist/browser.js",
 		"prepublish": "npm run build"
 	},
 	"repository": {
