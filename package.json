@@ -31,7 +31,7 @@
 		"object-keys": "~1.0.1"
 	},
 	"devDependencies": {
-		"browserify": "~7.0.0",
+		"browserify": "~7.0.3",
 		"is": "~2.2.0",
 		"tape": "~3.0.3",
 		"covert": "1.0.0",
