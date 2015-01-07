@@ -6,12 +6,13 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"test": "npm run lint && node test/index.js && npm run coverage-quiet",
+		"test": "npm run lint && node test/index.js && npm run coverage:quiet && npm run security",
 		"coverage": "covert test/*.js",
-		"coverage-quiet": "covert test/*.js --quiet",
+		"coverage:quiet": "covert test/*.js --quiet",
 		"lint": "jscs *.js test/*.js",
 		"build": "mkdir -p dist && browserify browserShim.js > dist/browser.js",
-		"prepublish": "npm run build"
+		"prepublish": "npm run build",
+		"security": "nsp package"
 	},
 	"repository": {
 		"type": "git",
@@ -35,7 +36,8 @@
 		"is": "~2.2.0",
 		"tape": "~3.0.3",
 		"covert": "1.0.0",
-		"jscs": "~1.9.0"
+		"jscs": "~1.9.0",
+		"nsp": "~0.5.2"
 	},
 	"testling": {
 		"files": "test/index.js",
