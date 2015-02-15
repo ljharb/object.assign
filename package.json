@@ -29,15 +29,15 @@
 		"Underscore"
 	],
 	"dependencies": {
-		"object-keys": "~1.0.3"
+		"object-keys": "^1.0.3"
 	},
 	"devDependencies": {
-		"browserify": "~8.1.3",
-		"is": "~2.2.1",
-		"tape": "~3.5.0",
-		"covert": "1.0.0",
-		"jscs": "~1.11.0",
-		"nsp": "~1.0.0"
+		"browserify": "^8.1.3",
+		"is": "^2.2.1",
+		"tape": "^3.5.0",
+		"covert": "^1.0.1",
+		"jscs": "^1.11.3",
+		"nsp": "^1.0.0"
 	},
 	"testling": {
 		"files": "test/index.js",
