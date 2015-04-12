@@ -77,16 +77,19 @@ test('only iterates over own keys', function (t) {
 	t.end();
 });
 
-test('includes symbols, after keys', { skip: !hasSymbols }, function (t) {
+test('includes enumerable symbols, after keys', { skip: !hasSymbols }, function (t) {
 	var visited = [];
 	var obj = {};
 	Object.defineProperty(obj, 'a', { get: function () { visited.push('a'); return 42; }, enumerable: true });
-	var symbol = Symbol();
+	var symbol = Symbol('enumerable');
 	Object.defineProperty(obj, symbol, { get: function () { visited.push(symbol); return Infinity; }, enumerable: true });
+	var nonEnumSymbol = Symbol('non-enumerable');
+	Object.defineProperty(obj, nonEnumSymbol, { get: function () { visited.push(nonEnumSymbol); return -Infinity; }, enumerable: false });
 	var target = assign({}, obj);
-    t.equal(target[symbol], Infinity, 'target[symbol] is Infinity');
-    t.equal(target.a, 42, 'target.a is 42');
     t.deepEqual(visited, ['a', symbol], 'key is visited first, then symbol');
+    t.equal(target.a, 42, 'target.a is 42');
+    t.equal(target[symbol], Infinity, 'target[symbol] is Infinity');
+    t.notEqual(target[nonEnumSymbol], -Infinity, 'target[nonEnumSymbol] is not -Infinity');
 	t.end();
 });
 
