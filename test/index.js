@@ -3,6 +3,7 @@
 var test = require('tape');
 var assign = require('../index.js');
 var keys = require('object-keys');
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 
 test('error cases', function (t) {
 	var target = {};
@@ -73,6 +74,48 @@ test('only iterates over own keys', function (t) {
 	var returned = assign(target, foo);
 	t.equal(returned, target, 'returned object is the same reference as the target object');
 	t.deepEqual(target, { baz: true, a: 1 }, 'returned object has only own properties from both');
+	t.end();
+});
+
+test('includes symbols, after keys', { skip: !hasSymbols }, function (t) {
+	var visited = [];
+	var obj = {};
+	Object.defineProperty(obj, 'a', { get: function () { visited.push('a'); return 42; }, enumerable: true });
+	var symbol = Symbol();
+	Object.defineProperty(obj, symbol, { get: function () { visited.push(symbol); return Infinity; }, enumerable: true });
+	var target = assign({}, obj);
+    t.equal(target[symbol], Infinity, 'target[symbol] is Infinity');
+    t.equal(target.a, 42, 'target.a is 42');
+    t.deepEqual(visited, ['a', symbol], 'key is visited first, then symbol');
+	t.end();
+});
+
+test('does not fail when symbols are not present', function (t) {
+	var getSyms;
+	if (hasSymbols) {
+		getSyms = Object.getOwnPropertySymbols;
+		delete Object.getOwnPropertySymbols;
+	}
+
+
+	var visited = [];
+	var obj = {};
+	Object.defineProperty(obj, 'a', { get: function () { visited.push('a'); return 42; }, enumerable: true });
+	if (hasSymbols) {
+		var symbol = Symbol();
+		Object.defineProperty(obj, symbol, { get: function () { visited.push(symbol); return Infinity; }, enumerable: true });
+	}
+	var target = assign({}, obj);
+    t.equal(target.a, 42, 'target.a is 42');
+    t.deepEqual(visited, ['a'], 'only key is visited');
+
+	if (hasSymbols) {
+		// sanity check for "visited" array
+		t.equal(obj[symbol], Infinity);
+		t.deepEqual(visited, ['a', symbol], 'symbol is visited manually');
+
+		Object.getOwnPropertySymbols = getSyms;
+	}
 	t.end();
 });
 
