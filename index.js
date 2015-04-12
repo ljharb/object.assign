@@ -6,6 +6,7 @@ var canBeObject = function (obj) {
 	return typeof obj !== 'undefined' && obj !== null;
 };
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
+var defineProperties = require('define-properties');
 
 var assignShim = function assign(target, source1) {
 	if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
@@ -26,7 +27,9 @@ var assignShim = function assign(target, source1) {
 
 assignShim.shim = function shimObjectAssign() {
 	if (!Object.assign) {
-		Object.assign = assignShim;
+		defineProperties(Object, {
+			assign: assignShim
+		});
 	}
 	return Object.assign || assignShim;
 };

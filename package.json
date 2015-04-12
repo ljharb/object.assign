@@ -29,7 +29,8 @@
 		"Underscore"
 	],
 	"dependencies": {
-		"object-keys": "^1.0.3"
+		"object-keys": "^1.0.3",
+		"define-properties": "^1.0.1"
 	},
 	"devDependencies": {
 		"browserify": "^9.0.8",

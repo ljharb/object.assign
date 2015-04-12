@@ -138,6 +138,9 @@ test('exports a "shim" function', function (t) {
 		var shimmedAssign = assign.shim();
 		st.equal(Object.assign, assign, 'Object.assign is overridden');
 		st.equal(shimmedAssign, assign, 'shim is returned');
+		if (Object.getOwnPropertyDescriptor) {
+			st.equal(Object.getOwnPropertyDescriptor(Object, 'assign').enumerable, false, 'is not enumerable');
+		}
 		Object.assign = originalObjectAssign;
 		st.end();
 	});
