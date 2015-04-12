@@ -32,9 +32,9 @@
 		"object-keys": "^1.0.3"
 	},
 	"devDependencies": {
-		"browserify": "^9.0.3",
+		"browserify": "^9.0.8",
 		"is": "^3.0.1",
-		"tape": "^3.5.0",
+		"tape": "^4.0.0",
 		"covert": "^1.0.1",
 		"jscs": "^1.11.3",
 		"nsp": "^1.0.1"
