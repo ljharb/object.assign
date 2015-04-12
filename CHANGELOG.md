@@ -1,3 +1,22 @@
+2.0.0 / 2015-04-12
+==================
+  * Make sure the shim function overwrites a broken implementation with pending exceptions.
+  * Ensure shim is not enumerable using `define-properties`
+  * Ensure `Object.assign` includes symbols.
+  * All grade A-supported `node`/`iojs` versions now ship with an `npm` that understands `^`.
+  * Run `travis-ci` tests on `iojs` and `node` v0.12; speed up builds; allow 0.8 failures.
+  * Add `npm run security` via `nsp`
+  * Update `browserify`, `jscs`, `tape`, `object-keys`, `is`
+
+1.1.1 / 2014-12-14
+==================
+  * Actually include the browser build in `npm`
+
+1.1.0 / 2014-12-14
+==================
+  * Add `npm run build`, and build an automatic-shimming browser distribution as part of the npm publish process.
+  * Update `is`, `jscs`
+
 1.0.3 / 2014-11-29
 ==================
   * Revert "optimize --production installs"
