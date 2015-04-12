@@ -1,3 +1,7 @@
+2.0.1 / 2015-04-12
+==================
+  * Make sure non-enumerable Symbols are excluded.
+
 2.0.0 / 2015-04-12
 ==================
   * Make sure the shim function overwrites a broken implementation with pending exceptions.
