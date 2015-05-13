@@ -150,6 +150,7 @@ test('exports a "shim" function', function (t) {
 
 	t.test('when Object.assign is present and has pending exceptions', { skip: !Object.assign || !Object.preventExtensions }, function (st) {
 		'use strict';
+
 		// Firefox 37 still has "pending exception" logic in its Object.assign implementation,
 		// which is 72% slower than our shim, and Firefox 40's native implementation.
 		var thrower = Object.preventExtensions({ 1: 2 });
