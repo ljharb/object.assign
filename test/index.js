@@ -1,12 +1,8 @@
-'use strict';
-
 var test = require('tape');
 var assign = require('../index.js');
-var keys = require('object-keys');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 
 test('error cases', function (t) {
-	var target = {};
 	t.throws(function () { assign(null); }, TypeError, 'target must be an object');
 	t.end();
 });
@@ -99,7 +95,6 @@ test('does not fail when symbols are not present', function (t) {
 		getSyms = Object.getOwnPropertySymbols;
 		delete Object.getOwnPropertySymbols;
 	}
-
 
 	var visited = [];
 	var obj = {};
