@@ -12,9 +12,9 @@
 
 An Object.assign shim. Invoke its "shim" method to shim Object.assign if it is unavailable.
 
-Takes a minimum of 2 object arguments: `target` and `source`.
+Takes a minimum of 2 arguments: `target` and `source`.
 Takes a variable sized list of source arguments - at least 1, as many as you want.
-Throws a TypeError if any arguments are not objects.
+Throws a TypeError if the `target` argument is `null` or `undefined`.
 
 Most common usage:
 ```js
