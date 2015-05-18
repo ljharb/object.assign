@@ -32,26 +32,24 @@ var assignShim = function assign(target, source1) {
 };
 
 assignShim.shim = function shimObjectAssign() {
-	if (Object.assign && Object.preventExtensions) {
-		var assignHasPendingExceptions = (function () {
-			// Firefox 37 still has "pending exception" logic in its Object.assign implementation,
-			// which is 72% slower than our shim, and Firefox 40's native implementation.
-			var thrower = Object.preventExtensions({ 1: 2 });
-			try {
-				Object.assign(thrower, 'xy');
-			} catch (e) {
-				return thrower[1] === 'y';
-			}
-		}());
-		if (assignHasPendingExceptions) {
-			delete Object.assign;
+	var assignHasPendingExceptions = function () {
+		if (!Object.assign || !Object.preventExtensions) {
+			return false;
 		}
-	}
-	if (!Object.assign) {
-		defineProperties(Object, {
-			assign: assignShim
-		});
-	}
+		// Firefox 37 still has "pending exception" logic in its Object.assign implementation,
+		// which is 72% slower than our shim, and Firefox 40's native implementation.
+		var thrower = Object.preventExtensions({ 1: 2 });
+		try {
+			Object.assign(thrower, 'xy');
+		} catch (e) {
+			return thrower[1] === 'y';
+		}
+	};
+	defineProperties(
+		Object,
+		{ assign: assignShim },
+		{ assign: assignHasPendingExceptions }
+	);
 	return Object.assign || assignShim;
 };
 
