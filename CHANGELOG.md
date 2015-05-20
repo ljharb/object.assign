@@ -1,3 +1,12 @@
+2.0.2 / 2015-05-20
+==================
+  * Make sure `.shim` is non-enumerable.
+  * Refactor `.shim` implementation to use `define-properties` predicates, rather than `delete`ing the original.
+  * Update docs to match spec/implementation. (#11)
+  * Add `npm run eslint`
+  * Test up to `io.js` `v2.0`
+  * Update `jscs`, `browserify`, `covert`
+
 2.0.1 / 2015-04-12
 ==================
   * Make sure non-enumerable Symbols are excluded.
