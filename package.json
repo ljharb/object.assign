@@ -6,7 +6,8 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"test": "npm run lint && node test/index.js && npm run security",
+		"test": "npm run lint && node test/index.js && npm run test:symbol-shim && npm run security",
+		"test:symbol-shim": "node test/symbolShim.js",
 		"coverage": "covert test/*.js",
 		"coverage:quiet": "covert test/*.js --quiet",
 		"lint": "npm run jscs && npm run eslint",
@@ -41,7 +42,8 @@
 		"covert": "^1.1.0",
 		"jscs": "^1.13.1",
 		"nsp": "^1.0.1",
-		"eslint": "^0.21.2"
+		"eslint": "^0.21.2",
+		"get-own-property-symbols": "^0.5.0"
 	},
 	"testling": {
 		"files": "test/index.js",
