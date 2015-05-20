@@ -1,6 +1,6 @@
 var test = require('tape');
-var assign = require('../index.js');
-var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
+var assign = require('../');
+var hasSymbols = require('../hasSymbols')();
 
 test('error cases', function (t) {
 	t.throws(function () { assign(null); }, TypeError, 'target must be an object');

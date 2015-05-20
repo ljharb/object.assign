@@ -5,7 +5,7 @@ var keys = require('object-keys');
 var canBeObject = function (obj) {
 	return typeof obj !== 'undefined' && obj !== null;
 };
-var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
+var hasSymbols = require('./hasSymbols')();
 var defineProperties = require('define-properties');
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 var isEnumerableOn = function (obj) {
