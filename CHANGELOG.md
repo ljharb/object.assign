@@ -1,3 +1,9 @@
+3.0.0 / 2015-05-20
+==================
+  * Attempt to feature-detect Symbols, even if `typeof Symbol() !== 'symbol'` (#12)
+  * Make a separate `hasSymbols` internal module
+  * Update `browserify`, `eslint`
+
 2.0.2 / 2015-05-20
 ==================
   * Make sure `.shim` is non-enumerable.
