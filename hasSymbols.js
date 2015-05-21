@@ -7,6 +7,7 @@ module.exports = function hasSymbols() {
 	var obj = {};
 	var sym = Symbol('test');
 	if (typeof sym === 'string') { return false; }
+	if (sym instanceof Symbol) { return false; }
 	obj[sym] = 42;
 	for (sym in obj) { return false; }
 	if (keys(obj).length !== 0) { return false; }
