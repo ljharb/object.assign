@@ -32,8 +32,8 @@
 		"Underscore"
 	],
 	"dependencies": {
-		"object-keys": "^1.0.3",
-		"define-properties": "^1.0.1"
+		"object-keys": "^1.0.4",
+		"define-properties": "^1.0.2"
 	},
 	"devDependencies": {
 		"browserify": "^10.2.1",
@@ -43,7 +43,7 @@
 		"jscs": "^1.13.1",
 		"nsp": "^1.0.1",
 		"eslint": "^0.21.2",
-		"get-own-property-symbols": "^0.5.0"
+		"get-own-property-symbols": "^0.5.1"
 	},
 	"testling": {
 		"files": "test/index.js",
