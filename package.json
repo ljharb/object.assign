@@ -36,13 +36,13 @@
 		"define-properties": "^1.0.2"
 	},
 	"devDependencies": {
-		"browserify": "^10.2.1",
+		"browserify": "^10.2.3",
 		"is": "^3.0.1",
 		"tape": "^4.0.0",
 		"covert": "^1.1.0",
 		"jscs": "^1.13.1",
 		"nsp": "^1.0.1",
-		"eslint": "^0.21.2",
+		"eslint": "^0.22.1",
 		"get-own-property-symbols": "^0.5.1"
 	},
 	"testling": {
