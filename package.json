@@ -36,7 +36,7 @@
 		"define-properties": "^1.0.2"
 	},
 	"devDependencies": {
-		"browserify": "^10.2.3",
+		"browserify": "^10.2.4",
 		"is": "^3.0.1",
 		"tape": "^4.0.0",
 		"covert": "^1.1.0",
