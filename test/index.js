@@ -121,10 +121,10 @@ test('includes enumerable symbols, after keys', { skip: !hasSymbols }, function 
 	var nonEnumSymbol = Symbol('non-enumerable');
 	Object.defineProperty(obj, nonEnumSymbol, { get: function () { visited.push(nonEnumSymbol); return -Infinity; }, enumerable: false });
 	var target = assign({}, obj);
-    t.deepEqual(visited, ['a', symbol], 'key is visited first, then symbol');
-    t.equal(target.a, 42, 'target.a is 42');
-    t.equal(target[symbol], Infinity, 'target[symbol] is Infinity');
-    t.notEqual(target[nonEnumSymbol], -Infinity, 'target[nonEnumSymbol] is not -Infinity');
+	t.deepEqual(visited, ['a', symbol], 'key is visited first, then symbol');
+	t.equal(target.a, 42, 'target.a is 42');
+	t.equal(target[symbol], Infinity, 'target[symbol] is Infinity');
+	t.notEqual(target[nonEnumSymbol], -Infinity, 'target[nonEnumSymbol] is not -Infinity');
 	t.end();
 });
 
@@ -143,8 +143,8 @@ test('does not fail when symbols are not present', function (t) {
 		Object.defineProperty(obj, symbol, { get: function () { visited.push(symbol); return Infinity; }, enumerable: true });
 	}
 	var target = assign({}, obj);
-    t.equal(target.a, 42, 'target.a is 42');
-    t.deepEqual(visited, ['a'], 'only key is visited');
+	t.equal(target.a, 42, 'target.a is 42');
+	t.deepEqual(visited, ['a'], 'only key is visited');
 
 	if (hasSymbols) {
 		// sanity check for "visited" array
