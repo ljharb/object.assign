@@ -8,21 +8,21 @@ var canBeObject = function (obj) {
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 var defineProperties = require('define-properties');
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-var isEnumerableOn = function (obj) {
-	return function isEnumerable(prop) {
-		return propIsEnumerable.call(obj, prop);
-	};
-};
 
 var assignShim = function assign(target, source1) {
 	if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
 	var objTarget = Object(target);
-	var s, source, i, props;
+	var s, source, i, props, syms;
 	for (s = 1; s < arguments.length; ++s) {
 		source = Object(arguments[s]);
 		props = keys(source);
 		if (hasSymbols && Object.getOwnPropertySymbols) {
-			props.push.apply(props, Object.getOwnPropertySymbols(source).filter(isEnumerableOn(source)));
+			syms = Object.getOwnPropertySymbols(source);
+			for (i = 0; i < syms.length; ++i) {
+				if (propIsEnumerable.call(source, syms[i])) {
+					props.push(syms[i]);
+				}
+			}
 		}
 		for (i = 0; i < props.length; ++i) {
 			objTarget[props[i]] = source[props[i]];
@@ -56,4 +56,3 @@ defineProperties(assignShim, {
 });
 
 module.exports = assignShim;
-
