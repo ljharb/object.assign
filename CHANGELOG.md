@@ -1,8 +1,25 @@
+3.0.1 / 2015-06-28
+==================
+  * Cache `Object` and `Array#push` to make the shim more robust.
+  * [Fix] Remove use of `Array#filter`, which isn't in ES3.
+  * [Deps] Update `object-keys`, `define-properties`
+  * [Dev Deps] Update `get-own-property-symbols`, `browserify`, `eslint`, `nsp`
+  * [Tests] Test up to `io.js` `v2.3`
+  * [Tests] Adding `Object.assign` tests for non-object targets, per https://github.com/paulmillr/es6-shim/issues/348
+
 3.0.0 / 2015-05-20
 ==================
   * Attempt to feature-detect Symbols, even if `typeof Symbol() !== 'symbol'` (#12)
   * Make a separate `hasSymbols` internal module
   * Update `browserify`, `eslint`
+
+2.0.3 / 2015-06-28
+==================
+  * Cache `Object` and `Array#push` to make the shim more robust.
+  * [Fix] Remove use of `Array#filter`, which isn't in ES3
+  * [Deps] Update `object-keys`, `define-properties`
+  * [Dev Deps] Update `browserify`, `nsp`, `eslint`
+  * [Tests] Test up to `io.js` `v2.3`
 
 2.0.2 / 2015-05-20
 ==================
