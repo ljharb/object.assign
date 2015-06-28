@@ -1,7 +1,6 @@
 {
 	"name": "object.assign",
 	"main": "index.js",
-	"version": "0.2.1",
 	"homepage": "https://github.com/ljharb/object.assign",
 	"authors": [
 		"Jordan Harband <ljharb@gmail.com>"

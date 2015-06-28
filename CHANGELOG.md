@@ -1,3 +1,11 @@
+2.0.3 / 2015-06-28
+==================
+  * Cache `Object` and `Array#push` to make the shim more robust.
+  * [Fix] Remove use of `Array#filter`, which isn't in ES3
+  * [Deps] Update `object-keys`, `define-properties`
+  * [Dev Deps] Update `browserify`, `nsp`, `eslint`
+  * [Tests] Test up to `io.js` `v2.3`
+
 2.0.2 / 2015-05-20
 ==================
   * Make sure `.shim` is non-enumerable.
