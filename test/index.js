@@ -28,20 +28,30 @@ test('non-object target, no sources', function (t) {
 
 test('non-object target, with sources', function (t) {
 	var signal = {};
-	var bool = assign(true, { a: signal });
-	t.equal(typeof bool, 'object', 'bool is object');
-	t.equal(Boolean.prototype.valueOf.call(bool), true, 'bool coerces to `true`');
-	t.equal(bool.a, signal, 'source properties copied');
 
-	var number = assign(1, { a: signal });
-	t.equal(typeof number, 'object', 'number is object');
-	t.equal(Number.prototype.valueOf.call(number), 1, 'number coerces to `1`');
-	t.equal(number.a, signal, 'source properties copied');
+	t.test('boolean', function (st) {
+		var bool = assign(true, { a: signal });
+		st.equal(typeof bool, 'object', 'bool is object');
+		st.equal(Boolean.prototype.valueOf.call(bool), true, 'bool coerces to `true`');
+		st.equal(bool.a, signal, 'source properties copied');
+		st.end();
+	});
 
-	var string = assign('1', { a: signal });
-	t.equal(typeof string, 'object', 'number is object');
-	t.equal(String.prototype.valueOf.call(string), '1', 'number coerces to `"1"`');
-	t.equal(string.a, signal, 'source properties copied');
+	t.test('number', function (st) {
+		var number = assign(1, { a: signal });
+		st.equal(typeof number, 'object', 'number is object');
+		st.equal(Number.prototype.valueOf.call(number), 1, 'number coerces to `1`');
+		st.equal(number.a, signal, 'source properties copied');
+		st.end();
+	});
+
+	t.test('string', function (st) {
+		var string = assign('1', { a: signal });
+		st.equal(typeof string, 'object', 'number is object');
+		st.equal(String.prototype.valueOf.call(string), '1', 'number coerces to `"1"`');
+		st.equal(string.a, signal, 'source properties copied');
+		st.end();
+	});
 
 	t.end();
 });

@@ -13,10 +13,7 @@ module.exports = function hasSymbols() {
 	if (keys(obj).length !== 0) { return false; }
 	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
 
-	if (typeof Object.getOwnPropertyNames === 'function') {
-		var names = Object.getOwnPropertyNames(obj);
-		if (names.length !== 0) { return false; }
-	}
+	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
 
 	var syms = Object.getOwnPropertySymbols(obj);
 	if (syms.length !== 1 || syms[0] !== sym) { return false; }
