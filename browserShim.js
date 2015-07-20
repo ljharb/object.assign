@@ -1,3 +1,5 @@
+'use strict';
+
 var keys = require('object-keys').shim();
 delete keys.shim;
 

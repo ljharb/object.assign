@@ -1,3 +1,5 @@
+'use strict';
+
 var test = require('tape');
 var assign = require('../');
 var hasSymbols = require('../hasSymbols')();
@@ -193,8 +195,6 @@ test('exports a "shim" function', function (t) {
 	});
 
 	t.test('when Object.assign is present and has pending exceptions', { skip: !Object.assign || !Object.preventExtensions }, function (st) {
-		'use strict';
-
 		var originalObjectAssign = Object.assign;
 		delete Object.assign;
 		assign.shim();

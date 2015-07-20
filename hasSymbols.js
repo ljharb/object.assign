@@ -1,3 +1,5 @@
+'use strict';
+
 var keys = require('object-keys');
 
 module.exports = function hasSymbols() {

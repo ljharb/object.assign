@@ -1,3 +1,5 @@
+'use strict';
+
 var test = require('tape');
 
 if (typeof Symbol === 'function' && typeof Symbol() === 'symbol') {
