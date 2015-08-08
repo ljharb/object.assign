@@ -38,11 +38,11 @@
 	"devDependencies": {
 		"browserify": "^11.0.1",
 		"is": "^3.0.1",
-		"tape": "^4.0.2",
+		"tape": "^4.0.3",
 		"covert": "^1.1.0",
 		"jscs": "^2.0.0",
 		"nsp": "^1.0.3",
-		"eslint": "^1.0.0",
+		"eslint": "^1.1.0",
 		"@ljharb/eslint-config": "^1.0.4",
 		"get-own-property-symbols": "^0.5.1"
 	},
