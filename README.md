@@ -119,7 +119,7 @@ assert.deepEqual(Object.assign(target, source), assign(target, source));
 Simply clone the repo, `npm install`, and run `npm test`
 
 [npm-url]: https://npmjs.org/package/object.assign
-[npm-version-svg]: http://vb.teelaun.ch/ljharb/object.assign.svg
+[npm-version-svg]: http://versionbadg.es/ljharb/object.assign.svg
 [travis-svg]: https://travis-ci.org/ljharb/object.assign.svg
 [travis-url]: https://travis-ci.org/ljharb/object.assign
 [deps-svg]: https://david-dm.org/ljharb/object.assign.svg?theme=shields.io
