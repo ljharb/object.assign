@@ -30,7 +30,10 @@
 		"$.extend",
 		"jQuery",
 		"_.extend",
-		"Underscore"
+		"Underscore",
+		"es-shim API",
+		"polyfill",
+		"shim"
 	],
 	"dependencies": {
 		"function-bind": "^1.0.2",

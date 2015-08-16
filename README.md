@@ -12,7 +12,7 @@
 
 An Object.assign shim. Invoke its "shim" method to shim Object.assign if it is unavailable.
 
-This package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](http://www.ecma-international.org/ecma-262/6.0/#sec-object.assign).
+This package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](http://www.ecma-international.org/ecma-262/6.0/#sec-object.assign). In an ES6 environment, it will also work properly with `Symbol`s.
 
 Takes a minimum of 2 arguments: `target` and `source`.
 Takes a variable sized list of source arguments - at least 1, as many as you want.
@@ -135,4 +135,3 @@ Simply clone the repo, `npm install`, and run `npm test`
 [license-url]: LICENSE
 [downloads-image]: http://img.shields.io/npm/dm/object.assign.svg
 [downloads-url]: http://npm-stat.com/charts.html?package=object.assign
-
