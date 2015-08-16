@@ -33,6 +33,7 @@
 		"Underscore"
 	],
 	"dependencies": {
+		"function-bind": "^1.0.2",
 		"object-keys": "^1.0.7",
 		"define-properties": "^1.1.1"
 	},
