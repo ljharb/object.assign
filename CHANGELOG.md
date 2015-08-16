@@ -1,3 +1,15 @@
+4.0.0 / 2015-08-15
+==================
+  * [Breaking] Implement the [es-shim API](es-shims/api).
+  * [Robustness] Make implementation robust against later modification of environment methods.
+  * [Refactor] Move implementation to `implementation.js`
+  * [Docs] Switch from vb.teelaun.ch to versionbadg.es for the npm version badge SVG
+  * [Deps] update `object-keys`, `define-properties`
+  * [Dev Deps] update `browserify`, `tape`, `eslint`, `jscs`, `browserify`
+  * [Tests] Add `npm run tests-only`
+  * [Tests] use my personal shared `eslint` config.
+  * [Tests] up to `io.js` `v3.0`
+
 3.0.1 / 2015-06-28
 ==================
   * Cache `Object` and `Array#push` to make the shim more robust.
