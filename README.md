@@ -12,13 +12,15 @@
 
 An Object.assign shim. Invoke its "shim" method to shim Object.assign if it is unavailable.
 
+This package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](http://www.ecma-international.org/ecma-262/6.0/#sec-object.assign).
+
 Takes a minimum of 2 arguments: `target` and `source`.
 Takes a variable sized list of source arguments - at least 1, as many as you want.
 Throws a TypeError if the `target` argument is `null` or `undefined`.
 
 Most common usage:
 ```js
-var assign = Object.assign || require('object.assign');
+var assign = require('object.assign').getPolyfill(); // returns native method if compliant
 ```
 
 ## Example
