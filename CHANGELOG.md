@@ -1,3 +1,7 @@
+4.0.1 / 2015-08-16
+==================
+  * [Docs] Add `Symbol` note to readme
+
 4.0.0 / 2015-08-15
 ==================
   * [Breaking] Implement the [es-shim API](es-shims/api).
