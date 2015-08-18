@@ -21,11 +21,15 @@ Throws a TypeError if the `target` argument is `null` or `undefined`.
 Most common usage:
 ```js
 var assign = require('object.assign').getPolyfill(); // returns native method if compliant
+	/* or */
+var assign = require('object.assign/polyfill')(); // returns native method if compliant
 ```
 
 ## Example
 
 ```js
+var assert = require('assert');
+
 // Multiple sources!
 var target = { a: true };
 var source1 = { b: true };
@@ -39,16 +43,11 @@ var expected = {
 	n: true
 };
 
-var assign = require('object.assign');
-var assert = require('assert');
-
 assign(target, source1, source2, sourceN);
 assert.deepEqual(target, expected); // AWESOME!
 ```
 
 ```js
-var assign = require('object.assign');
-var assert = require('assert');
 var target = {
 	a: true,
 	b: true,
@@ -74,11 +73,12 @@ assert.deepEqual(assigned, {
 ```
 
 ```js
-var assign = require('object.assign');
-var assert = require('assert');
 /* when Object.assign is not present */
 delete Object.assign;
-var shimmedAssign = assign.shim();
+var shimmedAssign = require('object.assign').shim();
+	/* or */
+var shimmedAssign = require('object.assign/shim')();
+
 assert.equal(shimmedAssign, assign);
 
 var target = {
@@ -97,10 +97,8 @@ assert.deepEqual(Object.assign(target, source), assign(target, source));
 ```
 
 ```js
-var assign = require('object.assign');
-var assert = require('assert');
 /* when Object.assign is present */
-var shimmedAssign = assign.shim();
+var shimmedAssign = require('object.assign').shim();
 assert.equal(shimmedAssign, Object.assign);
 
 var target = {
