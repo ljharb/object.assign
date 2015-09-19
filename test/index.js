@@ -3,6 +3,8 @@
 var test = require('tape');
 var assign = require('../');
 var hasSymbols = require('../hasSymbols')();
+var keys = require('object-keys');
+var forEach = require('for-each');
 
 test('error cases', function (t) {
 	t.throws(function () { assign(null); }, TypeError, 'target must be an object');
@@ -121,6 +123,17 @@ test('only iterates over own keys', function (t) {
 	var returned = assign(target, foo);
 	t.equal(returned, target, 'returned object is the same reference as the target object');
 	t.deepEqual(target, { baz: true, a: 1 }, 'returned object has only own properties from both');
+	t.end();
+});
+
+test('preserves correct property ordering', function (t) {
+	var letters = 'abcdefghijklmnopqrst';
+	var source = {};
+	forEach(letters, function (letter) {
+		source[letter] = letter;
+	});
+	var target = assign({}, source);
+	t.equal(keys(target).join(''), letters);
 	t.end();
 });
 
