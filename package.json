@@ -37,8 +37,8 @@
 	],
 	"dependencies": {
 		"function-bind": "^1.0.2",
-		"object-keys": "^1.0.7",
-		"define-properties": "^1.1.1"
+		"object-keys": "^1.0.8",
+		"define-properties": "^1.1.2"
 	},
 	"devDependencies": {
 		"browserify": "^11.2.0",
