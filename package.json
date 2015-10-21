@@ -16,7 +16,7 @@
 		"jscs": "jscs *.js test/*.js",
 		"build": "mkdir -p dist && browserify browserShim.js > dist/browser.js",
 		"prepublish": "npm run build",
-		"security": "nsp package"
+		"security": "requiresafe check"
 	},
 	"repository": {
 		"type": "git",
@@ -46,7 +46,7 @@
 		"tape": "^4.2.1",
 		"covert": "^1.1.0",
 		"jscs": "^2.3.4",
-		"nsp": "^1.1.0",
+		"requiresafe": "^2.3.0",
 		"eslint": "^1.7.1",
 		"@ljharb/eslint-config": "^1.4.1",
 		"get-own-property-symbols": "^0.5.1",
