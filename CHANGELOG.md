@@ -1,3 +1,13 @@
+4.0.3 / 2015-10-21
+==================
+  * [Fix] Support core-js's Symbol sham (#17)
+  * [Fix] Ensure that properties removed or made non-enumerable during enumeration are not assigned (#16)
+  * [Fix] Avoid looking up keys and values more than once
+  * [Tests] Avoid using `reduce` so `npm run test:shams:corejs` passes in `node` `v0.8` ([core-js#122](https://github.com/zloirock/core-js/issues/122))
+  * [Tests] Refactor to use my conventional structure that separates shimmed, implementation, and common tests
+  * [Tests] Create `npm run test:shams` and better organize tests for symbol shams
+  * [Tests] Remove `nsp` in favor of `requiresafe`
+
 4.0.2 / 2015-10-20
 ==================
   * [Fix] Ensure correct property enumeration order, particularly in v8 (#15)
