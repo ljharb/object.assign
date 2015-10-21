@@ -11,7 +11,7 @@ if (typeof Symbol === 'function' && typeof Symbol() === 'symbol') {
 	return;
 }
 
-var hasSymbols = require('../hasSymbols');
+var hasSymbols = require('../../hasSymbols');
 
 test('polyfilled Symbols', function (t) {
 	/* eslint-disable global-require */
@@ -19,7 +19,7 @@ test('polyfilled Symbols', function (t) {
 	require('get-own-property-symbols');
 	var hasSymbolsAfter = hasSymbols();
 	t.equal(hasSymbolsAfter, true, 'hasSymbols is true after polyfilling');
-	if (hasSymbolsAfter) { require('./'); }
+	if (hasSymbolsAfter) { require('../'); }
 	/* eslint-enable global-require */
 	t.end();
 });

@@ -7,8 +7,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "npm run lint && es-shim-api && npm run tests-only && npm run security",
-		"tests-only": "node test/index.js && npm run test:symbol-shim",
-		"test:symbol-shim": "node test/symbolShim.js",
+		"tests-only": "node test/index.js && npm run test:shams",
+		"test:shams": "npm run test:shams:getownpropertysymbols",
+		"test:shams:getownpropertysymbols": "node test/shams/get-own-property-symbols.js",
 		"coverage": "covert test/*.js",
 		"coverage:quiet": "covert test/*.js --quiet",
 		"lint": "npm run jscs && npm run eslint",
