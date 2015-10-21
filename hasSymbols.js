@@ -10,7 +10,8 @@ module.exports = function hasSymbols() {
 	var sym = Symbol('test');
 	if (typeof sym === 'string') { return false; }
 	if (sym instanceof Symbol) { return false; }
-	obj[sym] = 42;
+	var symVal = 42;
+	obj[sym] = symVal;
 	for (sym in obj) { return false; }
 	if (keys(obj).length !== 0) { return false; }
 	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
@@ -24,7 +25,7 @@ module.exports = function hasSymbols() {
 
 	if (typeof Object.getOwnPropertyDescriptor === 'function') {
 		var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
-		if (descriptor.value !== 42 || descriptor.enumerable !== true) { return false; }
+		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
 	}
 
 	return true;
