@@ -171,10 +171,10 @@ module.exports = function (assign, t) {
 
 	t.test('preserves correct property enumeration order', function (st) {
 		var str = 'abcdefghijklmnopqrst';
-		var letters = str.split('').reduce(function (map, letter) {
-			map[letter] = letter;
-			return map;
-		}, {});
+		var letters = {};
+		forEach(str.split(''), function (letter) {
+			letters[letter] = letter;
+		});
 
 		var n = 5;
 		st.comment('run the next test ' + n + ' times');
