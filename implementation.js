@@ -30,7 +30,9 @@ module.exports = function assign(target, source1) {
 		for (i = 0; i < props.length; ++i) {
 			key = props[i];
 			value = source[key];
-			objTarget[key] = value;
+			if (propIsEnumerable(source, key)) {
+				objTarget[key] = value;
+			}
 		}
 	}
 	return objTarget;

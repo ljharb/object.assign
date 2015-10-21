@@ -188,4 +188,26 @@ module.exports = function (assign, t) {
 		}
 		st.end();
 	});
+
+	t.test('checks enumerability and existence, in case of modification during [[Get]]', { skip: !Object.defineProperty }, function (st) {
+		var targetBvalue = {}, targetCvalue = {};
+		var target = { b: targetBvalue, c: targetCvalue };
+		var source = {};
+		Object.defineProperty(source, 'a', {
+			get: function () {
+				delete this.b;
+				Object.defineProperty(this, 'c', { enumerable: false });
+			},
+			enumerable: true
+		});
+		var sourceBvalue = {}, sourceCvalue = {};
+		source.b = sourceBvalue;
+		source.c = sourceCvalue;
+		var result = assign(target, source);
+		st.equal(result, target, 'sanity check: result is === target');
+		st.equal(result.b, targetBvalue, 'target key not overwritten by deleted source key');
+		st.equal(result.c, targetCvalue, 'target key not overwritten by non-enumerable source key');
+
+		st.end();
+	});
 };
