@@ -1,3 +1,10 @@
+4.0.2 / 2015-10-20
+==================
+  * [Fix] Ensure correct property enumeration order, particularly in v8 (#15)
+  * [Deps] update `object-keys`, `define-properties`
+  * [Dev Deps] update `browserify`, `is`, `tape`, `jscs`, `eslint`, `@ljharb/eslint-config`
+  * [Tests] up to `io.js` `v3.3`, `node` `v4.2`
+
 4.0.1 / 2015-08-16
 ==================
   * [Docs] Add `Symbol` note to readme
