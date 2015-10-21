@@ -126,17 +126,6 @@ test('only iterates over own keys', function (t) {
 	t.end();
 });
 
-test('preserves correct property ordering', function (t) {
-	var letters = 'abcdefghijklmnopqrst';
-	var source = {};
-	forEach(letters, function (letter) {
-		source[letter] = letter;
-	});
-	var target = assign({}, source);
-	t.equal(keys(target).join(''), letters);
-	t.end();
-});
-
 test('includes enumerable symbols, after keys', { skip: !hasSymbols }, function (t) {
 	var visited = [];
 	var obj = {};
@@ -184,16 +173,6 @@ test('does not fail when symbols are not present', function (t) {
 test('exports a "shim" function', function (t) {
 	t.equal(typeof assign.shim, 'function', 'assign.shim is a function');
 
-	t.test('when Object.assign is present', function (st) {
-		var originalObjectAssign = Object.assign;
-		Object.assign = function () {};
-		var shimmedAssign = assign.shim();
-		st.notEqual(Object.assign, assign, 'Object.assign is not overridden');
-		st.equal(shimmedAssign, Object.assign, 'Object.assign is returned');
-		Object.assign = originalObjectAssign;
-		st.end();
-	});
-
 	t.test('when Object.assign is not present', function (st) {
 		var originalObjectAssign = Object.assign;
 		delete Object.assign;
@@ -221,6 +200,38 @@ test('exports a "shim" function', function (t) {
 		st.equal(thrower[1], 2, 'thrower[1] === 2');
 
 		Object.assign = originalObjectAssign;
+		st.end();
+	});
+
+	var testEnumerationOrder = function (testObject, objectAssign) {
+		var str = 'abcdefghijklmnopqrst';
+		var letters = str.split('').reduce(function (map, letter) {
+			map[letter] = letter;
+			return map;
+		}, {});
+
+		var n = 5;
+		testObject.comment('run the next test ' + n + ' times');
+		var object = objectAssign({}, letters);
+		var actual = '';
+		for (var k in object) {
+			actual += k;
+		}
+		for (var i = 0; i < n; ++i) {
+			testObject.equal(actual, str, 'property enumeration order should be followed');
+		}
+	};
+
+	t.test('preserves correct property enumeration order', function (st) {
+		st.comment('implementation:');
+		testEnumerationOrder(st, assign);
+
+		var original = Object.assign;
+		assign.shim();
+		st.comment('shimmed method:');
+		testEnumerationOrder(st, Object.assign);
+		Object.assign = original;
+
 		st.end();
 	});
 
