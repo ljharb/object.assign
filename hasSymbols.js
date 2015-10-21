@@ -9,7 +9,12 @@ module.exports = function hasSymbols() {
 	var obj = {};
 	var sym = Symbol('test');
 	if (typeof sym === 'string') { return false; }
-	if (sym instanceof Symbol) { return false; }
+
+	// temp disabled per https://github.com/ljharb/object.assign/issues/17
+	// if (sym instanceof Symbol) { return false; }
+	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
+	// if (!(Object(sym) instanceof Symbol)) { return false; }
+
 	var symVal = 42;
 	obj[sym] = symVal;
 	for (sym in obj) { return false; }
