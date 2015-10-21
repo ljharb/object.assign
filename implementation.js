@@ -14,20 +14,23 @@ var propIsEnumerable = bind.call(Function.call, Object.prototype.propertyIsEnume
 module.exports = function assign(target, source1) {
 	if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
 	var objTarget = toObject(target);
-	var s, source, i, props, syms;
+	var s, source, i, props, syms, value, key;
 	for (s = 1; s < arguments.length; ++s) {
 		source = toObject(arguments[s]);
 		props = keys(source);
 		if (hasSymbols && Object.getOwnPropertySymbols) {
 			syms = Object.getOwnPropertySymbols(source);
 			for (i = 0; i < syms.length; ++i) {
-				if (propIsEnumerable(source, syms[i])) {
-					push(props, syms[i]);
+				key = syms[i];
+				if (propIsEnumerable(source, key)) {
+					push(props, key);
 				}
 			}
 		}
 		for (i = 0; i < props.length; ++i) {
-			objTarget[props[i]] = source[props[i]];
+			key = props[i];
+			value = source[key];
+			objTarget[key] = value;
 		}
 	}
 	return objTarget;
