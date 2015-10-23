@@ -53,7 +53,7 @@
 		"requiresafe": "^2.3.0",
 		"eslint": "^1.7.2",
 		"@ljharb/eslint-config": "^1.4.1",
-		"get-own-property-symbols": "^0.5.1",
+		"get-own-property-symbols": "^0.6.0",
 		"core-js": "^1.2.2",
 		"@es-shims/api": "^1.0.0",
 		"for-each": "^0.3.2"
