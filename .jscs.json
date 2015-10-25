@@ -75,7 +75,7 @@
 
 	"disallowMultipleLineStrings": true,
 
-	"requireDotNotation": true,
+	"requireDotNotation": { "allExcept": ["keywords"] },
 
 	"requireParenthesesAroundIIFE": true,
 
@@ -126,6 +126,7 @@
 
 	"disallowNestedTernaries": { "maxLevel": 1 },
 
-	"requireSpaceAfterComma": true
+	"requireSpaceAfterComma": true,
+	"requireAlignedMultilineParams": false
 }
 
