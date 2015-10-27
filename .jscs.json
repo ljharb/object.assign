@@ -16,6 +16,7 @@
 	"disallowSpaceAfterKeywords": [],
 
 	"disallowSpaceBeforeComma": true,
+	"disallowSpaceAfterComma": false,
 	"disallowSpaceBeforeSemicolon": true,
 
 	"disallowNodeTypes": [
@@ -26,7 +27,7 @@
 		"WithStatement"
 	],
 
-	"requireObjectKeysOnNewLine": false,
+	"requireObjectKeysOnNewLine": { "allExcept": ["sameLine"] },
 
 	"requireSpacesInAnonymousFunctionExpression": { "beforeOpeningRoundBrace": true, "beforeOpeningCurlyBrace": true },
 	"requireSpacesInNamedFunctionExpression": { "beforeOpeningCurlyBrace": true },
