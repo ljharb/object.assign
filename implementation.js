@@ -2,14 +2,17 @@
 
 // modified from https://github.com/es-shims/es6-shim
 var keys = require('object-keys');
-var bind = require('function-bind');
 var canBeObject = function (obj) {
 	return typeof obj !== 'undefined' && obj !== null;
 };
 var hasSymbols = require('./hasSymbols')();
 var toObject = Object;
-var push = bind.call(Function.call, Array.prototype.push);
-var propIsEnumerable = bind.call(Function.call, Object.prototype.propertyIsEnumerable);
+var push = function (arr, item) {
+	return Array.prototype.push.call(arr, item);
+};
+var propIsEnumerable = function (obj, prop) {
+	return Object.prototype.propertyIsEnumerable.call(obj, prop);
+};
 
 module.exports = function assign(target, source1) {
 	if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
