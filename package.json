@@ -8,6 +8,7 @@
 	"scripts": {
 		"test": "parallelshell 'npm run lint' 'es-shim-api' && npm run tests-only && npm run security",
 		"tests-only": "parallelshell 'npm run test:implementation' 'npm run test:shim' 'npm run test:shams'",
+		"test:native": "node test/native.js",
 		"test:shim": "node test/shimmed.js",
 		"test:implementation": "node test/index.js",
 		"test:shams": "parallelshell 'npm run test:shams:getownpropertysymbols' 'npm run test:shams:corejs'",
