@@ -1,7 +1,6 @@
 'use strict';
 
 var hasSymbols = require('../hasSymbols')();
-var keys = require('object-keys');
 var forEach = require('for-each');
 
 module.exports = function (assign, t) {
@@ -190,7 +189,8 @@ module.exports = function (assign, t) {
 	});
 
 	t.test('checks enumerability and existence, in case of modification during [[Get]]', { skip: !Object.defineProperty }, function (st) {
-		var targetBvalue = {}, targetCvalue = {};
+		var targetBvalue = {};
+		var targetCvalue = {};
 		var target = { b: targetBvalue, c: targetCvalue };
 		var source = {};
 		Object.defineProperty(source, 'a', {
@@ -200,7 +200,8 @@ module.exports = function (assign, t) {
 			},
 			enumerable: true
 		});
-		var sourceBvalue = {}, sourceCvalue = {};
+		var sourceBvalue = {};
+		var sourceCvalue = {};
 		source.b = sourceBvalue;
 		source.c = sourceCvalue;
 		var result = assign(target, source);
