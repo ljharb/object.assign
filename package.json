@@ -54,7 +54,7 @@
 		"nsp": "^2.2.1",
 		"eslint": "^2.4.0",
 		"@ljharb/eslint-config": "^2.1.1",
-		"get-own-property-symbols": "^0.9.0",
+		"get-own-property-symbols": "^0.9.1",
 		"core-js": "^2.1.5",
 		"@es-shims/api": "^1.1.0",
 		"for-each": "^0.3.2",
