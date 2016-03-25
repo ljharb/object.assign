@@ -6,7 +6,9 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"test": "parallelshell 'npm run --silent lint' 'es-shim-api' && npm run --silent tests-only && npm run --silent security",
+		"pretest": "parallelshell 'npm run --silent lint' 'es-shim-api'",
+		"test": "npm run --silent tests-only",
+		"posttest": "npm run --silent security",
 		"tests-only": "parallelshell 'npm run --silent test:implementation' 'npm run --silent test:shim' 'npm run --silent test:shams'",
 		"test:native": "node test/native.js",
 		"test:shim": "node test/shimmed.js",
