@@ -152,7 +152,10 @@ module.exports = function (assign, t) {
 		Object.defineProperty(obj, 'a', { get: function () { visited.push('a'); return 42; }, enumerable: true });
 		if (hasSymbols) {
 			var symbol = Symbol();
-			Object.defineProperty(obj, symbol, { get: function () { visited.push(symbol); return Infinity; }, enumerable: true });
+			Object.defineProperty(obj, symbol, {
+				get: function () { visited.push(symbol); return Infinity; },
+				enumerable: true
+			});
 		}
 		var target = assign({}, obj);
 		st.equal(target.a, 42, 'target.a is 42');
