@@ -160,13 +160,11 @@ module.exports = function (assign, t) {
 			keys.push(symbol);
 		}
 		var target = assign({}, obj);
+		st.deepEqual(visited, keys, 'assign visits expected keys');
 		st.equal(target.a, 42, 'target.a is 42');
-		st.deepEqual(visited, keys, 'only key is visited');
 
 		if (hasSymbols) {
-			// sanity check for "visited" array
-			st.equal(obj[symbol], Infinity);
-			st.deepEqual(visited, keys.concat(symbol), 'symbol is visited manually');
+			st.equal(target[symbol], Infinity);
 
 			Object.getOwnPropertySymbols = getSyms;
 		}
