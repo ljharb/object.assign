@@ -44,7 +44,7 @@
 	],
 	"dependencies": {
 		"function-bind": "^1.1.0",
-		"object-keys": "^1.0.9",
+		"object-keys": "^1.0.10",
 		"define-properties": "^1.1.2"
 	},
 	"devDependencies": {
