@@ -6,7 +6,7 @@ var bind = require('function-bind');
 var canBeObject = function (obj) {
 	return typeof obj !== 'undefined' && obj !== null;
 };
-var hasSymbols = require('./hasSymbols')();
+var hasSymbols = require('has-symbols/shams')();
 var toObject = Object;
 var push = bind.call(Function.call, Array.prototype.push);
 var propIsEnumerable = bind.call(Function.call, Object.prototype.propertyIsEnumerable);

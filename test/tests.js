@@ -1,6 +1,6 @@
 'use strict';
 
-var hasSymbols = require('../hasSymbols')();
+var hasSymbols = require('has-symbols/shams')();
 var forEach = require('for-each');
 
 module.exports = function (assign, t) {
