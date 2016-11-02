@@ -9,8 +9,8 @@ var shim = require('./shim');
 var polyfill = getPolyfill();
 
 defineProperties(polyfill, {
-	implementation: implementation,
 	getPolyfill: getPolyfill,
+	implementation: implementation,
 	shim: shim
 });
 
