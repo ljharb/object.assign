@@ -53,7 +53,7 @@
 		"jscs": "^3.0.7",
 		"nsp": "^2.6.2",
 		"eslint": "^3.9.1",
-		"@ljharb/eslint-config": "^8.0.0",
+		"@ljharb/eslint-config": "^9.0.0",
 		"@es-shims/api": "^1.2.0",
 		"for-each": "^0.3.2"
 	},
