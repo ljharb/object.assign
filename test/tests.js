@@ -129,9 +129,15 @@ module.exports = function (assign, t) {
 		var obj = {};
 		Object.defineProperty(obj, 'a', { enumerable: true, get: function () { visited.push('a'); return 42; } });
 		var symbol = Symbol('enumerable');
-		Object.defineProperty(obj, symbol, { enumerable: true, get: function () { visited.push(symbol); return Infinity; } });
+		Object.defineProperty(obj, symbol, {
+			enumerable: true,
+			get: function () { visited.push(symbol); return Infinity; }
+		});
 		var nonEnumSymbol = Symbol('non-enumerable');
-		Object.defineProperty(obj, nonEnumSymbol, { enumerable: false, get: function () { visited.push(nonEnumSymbol); return -Infinity; } });
+		Object.defineProperty(obj, nonEnumSymbol, {
+			enumerable: false,
+			get: function () { visited.push(nonEnumSymbol); return -Infinity; }
+		});
 		var target = assign({}, obj);
 		st.deepEqual(visited, ['a', symbol], 'key is visited first, then symbol');
 		st.equal(target.a, 42, 'target.a is 42');
