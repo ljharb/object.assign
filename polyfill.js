@@ -3,9 +3,6 @@
 var implementation = require('./implementation');
 
 var lacksProperEnumerationOrder = function () {
-	if (!Object.assign) {
-		return false;
-	}
 	// v8, specifically in node 4.x, has a bug with incorrect property enumeration order
 	// note: this does not detect the bug unless there's 20 characters
 	var str = 'abcdefghijklmnopqrst';
@@ -23,7 +20,7 @@ var lacksProperEnumerationOrder = function () {
 };
 
 var assignHasPendingExceptions = function () {
-	if (!Object.assign || !Object.preventExtensions) {
+	if (!Object.preventExtensions) {
 		return false;
 	}
 	// Firefox 37 still has "pending exception" logic in its Object.assign implementation,
