@@ -52,7 +52,7 @@
 		"covert": "^1.1.0",
 		"jscs": "^3.0.7",
 		"nsp": "^2.6.2",
-		"eslint": "^3.11.0",
+		"eslint": "^3.12.2",
 		"@ljharb/eslint-config": "^9.0.1",
 		"@es-shims/api": "^1.2.0",
 		"for-each": "^0.3.2"
