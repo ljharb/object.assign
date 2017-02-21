@@ -40,7 +40,6 @@
 		"shim"
 	],
 	"dependencies": {
-		"function-bind": "^1.1.0",
 		"object-keys": "^1.0.11",
 		"define-properties": "^1.1.2",
 		"has-symbols": "^1.0.0"
@@ -79,4 +78,3 @@
 		"node": ">= 0.4"
 	}
 }
-
