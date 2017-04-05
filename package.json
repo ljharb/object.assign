@@ -46,13 +46,13 @@
 		"has-symbols": "^1.0.0"
 	},
 	"devDependencies": {
-		"browserify": "^14.1.0",
-		"is": "^3.2.0",
+		"browserify": "^14.3.0",
+		"is": "^3.2.1",
 		"tape": "^4.6.3",
 		"covert": "^1.1.0",
 		"jscs": "^3.0.7",
-		"nsp": "^2.6.2",
-		"eslint": "^3.15.0",
+		"nsp": "^2.6.3",
+		"eslint": "^3.19.0",
 		"@ljharb/eslint-config": "^11.0.0",
 		"@es-shims/api": "^1.2.0",
 		"for-each": "^0.3.2"
