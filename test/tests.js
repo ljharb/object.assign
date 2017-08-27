@@ -5,10 +5,10 @@ var forEach = require('for-each');
 
 module.exports = function (assign, t) {
 	t.test('error cases', function (st) {
-		st.throws(function () { assign(null); }, TypeError, 'target must be an object');
-		st.throws(function () { assign(undefined); }, TypeError, 'target must be an object');
-		st.throws(function () { assign(null, {}); }, TypeError, 'target must be an object');
-		st.throws(function () { assign(undefined, {}); }, TypeError, 'target must be an object');
+		st['throws'](function () { assign(null); }, TypeError, 'target must be an object');
+		st['throws'](function () { assign(undefined); }, TypeError, 'target must be an object');
+		st['throws'](function () { assign(null, {}); }, TypeError, 'target must be an object');
+		st['throws'](function () { assign(undefined, {}); }, TypeError, 'target must be an object');
 		st.end();
 	});
 
@@ -207,6 +207,7 @@ module.exports = function (assign, t) {
 			get: function () {
 				delete this.b;
 				Object.defineProperty(this, 'c', { enumerable: false });
+				return 'a';
 			}
 		});
 		var sourceBvalue = {};
