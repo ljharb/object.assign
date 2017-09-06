@@ -40,10 +40,10 @@
 		"shim"
 	],
 	"dependencies": {
-		"function-bind": "^1.1.0",
-		"object-keys": "^1.0.11",
 		"define-properties": "^1.1.2",
-		"has-symbols": "^1.0.0"
+		"function-bind": "^1.1.1",
+		"has-symbols": "^1.0.0",
+		"object-keys": "^1.0.11"
 	},
 	"devDependencies": {
 		"@es-shims/api": "^1.3.0",
