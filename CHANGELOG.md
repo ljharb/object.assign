@@ -1,3 +1,11 @@
+4.0.4 / 2017-12-21
+==================
+  * [New] add `auto` entry point (#52)
+  * [Refactor] Use `has-symbols` module
+  * [Deps] update `function-bind`, `object-keys`
+  * [Dev Deps] update `@es-shims/api`, `browserify`, `nsp`, `eslint`, `@ljharb/eslint-config`, `is`
+  * [Tests] up to `node` `v9.3`, `v8.9`, `v6.12`; use `nvm install-latest-npm`; pin included builds to LTS
+
 4.0.4 / 2016-07-04
 ==================
   * [Fix] Cache original `getOwnPropertySymbols`, and use that when `Object.getOwnPropertySymbols` is unavailable
