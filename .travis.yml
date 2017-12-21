@@ -185,4 +185,3 @@ matrix:
     - os: osx
     - env: TEST=true ALLOW_FAILURE=true
     - env: COVERAGE=true
-    - node_js: "0.6"
