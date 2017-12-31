@@ -4,7 +4,7 @@
 	"extends": "@ljharb",
 
 	"rules": {
-		"complexity": [2, 17],
+		"complexity": [2, 19],
 		"id-length": [2, { "min": 1, "max": 30 }],
 		"max-nested-callbacks": [2, 3],
 		"max-statements": [2, 33],
