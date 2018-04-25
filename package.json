@@ -48,14 +48,14 @@
 	"devDependencies": {
 		"@es-shims/api": "^2.1.2",
 		"@ljharb/eslint-config": "^12.2.1",
-		"browserify": "^15.1.0",
+		"browserify": "^16.2.0",
 		"covert": "^1.1.0",
-		"eslint": "^4.15.0",
+		"eslint": "^4.19.1",
 		"for-each": "^0.3.2",
 		"is": "^3.2.1",
 		"jscs": "^3.0.7",
-		"nsp": "^3.1.0",
-		"tape": "^4.8.0"
+		"nsp": "^3.2.1",
+		"tape": "^4.9.0"
 	},
 	"testling": {
 		"files": "test/index.js",
