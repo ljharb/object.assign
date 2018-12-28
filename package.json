@@ -8,7 +8,7 @@
 	"scripts": {
 		"pretest": "npm run --silent lint && es-shim-api",
 		"test": "npm run --silent tests-only",
-		"posttest": "npm run --silent security",
+		"posttest": "npm run audit",
 		"tests-only": "npm run --silent test:implementation && npm run --silent test:shim",
 		"test:native": "node test/native.js",
 		"test:shim": "node test/shimmed.js",
@@ -20,7 +20,9 @@
 		"jscs": "jscs *.js test/*.js",
 		"build": "mkdir -p dist && browserify browserShim.js > dist/browser.js",
 		"prepublish": "npm run --silent build",
-		"security": "nsp check"
+		"preaudit": "npm install --package-lock --package-lock-only",
+		"audit": "npm audit",
+		"postaudit": "rm package-lock.json"
 	},
 	"repository": {
 		"type": "git",
@@ -54,7 +56,6 @@
 		"for-each": "^0.3.3",
 		"is": "^3.2.1",
 		"jscs": "^3.0.7",
-		"nsp": "^3.2.1",
 		"tape": "^4.9.1"
 	},
 	"testling": {
