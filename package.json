@@ -50,7 +50,7 @@
 		"@ljharb/eslint-config": "^13.1.1",
 		"browserify": "^16.2.3",
 		"covert": "^1.1.1",
-		"eslint": "^5.15.3",
+		"eslint": "^5.16.0",
 		"for-each": "^0.3.3",
 		"has": "^1.0.3",
 		"is": "^3.3.0",
