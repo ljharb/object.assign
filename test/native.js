@@ -3,7 +3,7 @@
 var test = require('tape');
 var defineProperties = require('define-properties');
 var isEnumerable = Object.prototype.propertyIsEnumerable;
-var functionsHaveNames = function f() {}.name === 'f';
+var functionsHaveNames = require('functions-have-names')();
 
 var runTests = require('./tests');
 
