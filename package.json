@@ -2,6 +2,9 @@
 	"name": "object.assign",
 	"version": "4.1.0",
 	"author": "Jordan Harband",
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
 	"description": "ES6 spec-compliant Object.assign shim. From https://github.com/es-shims/es6-shim",
 	"license": "MIT",
 	"main": "index.js",
