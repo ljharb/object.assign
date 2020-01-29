@@ -35,7 +35,7 @@ module.exports = function (assign, t) {
 		st.test('boolean', function (st2) {
 			var bool = assign(true, { a: signal });
 			st2.equal(typeof bool, 'object', 'bool is object');
-			st.equal(Boolean.prototype.valueOf.call(bool), true, 'bool coerces to `true`');
+			st2.equal(Boolean.prototype.valueOf.call(bool), true, 'bool coerces to `true`');
 			st2.equal(bool.a, signal, 'source properties copied');
 			st2.end();
 		});
