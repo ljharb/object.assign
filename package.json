@@ -10,12 +10,13 @@
 	"main": "index.js",
 	"scripts": {
 		"pretest": "npm run --silent lint && es-shim-api --bound",
-		"test": "npm run --silent tests-only",
+		"test": "npm run --silent tests-only && npm run test:ses",
 		"posttest": "aud --production",
 		"tests-only": "npm run --silent test:implementation && npm run --silent test:shim",
-		"test:native": "node test/native.js",
-		"test:shim": "node test/shimmed.js",
-		"test:implementation": "node test/index.js",
+		"test:native": "node test/native",
+		"test:shim": "node test/shimmed",
+		"test:implementation": "node test",
+		"test:ses": "node test/ses-compat",
 		"coverage": "covert test/*.js",
 		"lint": "eslint .",
 		"build": "mkdir -p dist && browserify browserShim.js > dist/browser.js",
@@ -56,6 +57,7 @@
 		"has": "^1.0.3",
 		"is": "^3.3.0",
 		"safe-publish-latest": "^1.1.4",
+		"ses": "^0.10.3",
 		"tape": "^5.0.1"
 	},
 	"testling": {
