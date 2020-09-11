@@ -9,7 +9,7 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"pretest": "npm run --silent lint && es-shim-api",
+		"pretest": "npm run --silent lint && es-shim-api --bound",
 		"test": "npm run --silent tests-only",
 		"posttest": "aud --production",
 		"tests-only": "npm run --silent test:implementation && npm run --silent test:shim",
