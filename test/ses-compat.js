@@ -9,4 +9,4 @@ require('ses');
 lockdown({ errorTaming: 'unsafe' });
 
 // initialize the module
-require('..');
+require('./');
