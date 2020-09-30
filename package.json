@@ -51,13 +51,13 @@
 		"aud": "^1.1.2",
 		"browserify": "^16.5.2",
 		"covert": "^1.1.1",
-		"eslint": "^7.8.1",
+		"eslint": "^7.10.0",
 		"for-each": "^0.3.3",
 		"functions-have-names": "^1.2.1",
 		"has": "^1.0.3",
 		"is": "^3.3.0",
 		"safe-publish-latest": "^1.1.4",
-		"ses": "^0.10.3",
+		"ses": "^0.10.4",
 		"tape": "^5.0.1"
 	},
 	"testling": {
