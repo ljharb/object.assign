@@ -49,7 +49,7 @@
 		"@ljharb/eslint-config": "^17.2.0",
 		"aud": "^1.1.2",
 		"browserify": "^16.5.2",
-		"eslint": "^7.10.0",
+		"eslint": "^7.12.1",
 		"for-each": "^0.3.3",
 		"functions-have-names": "^1.2.1",
 		"has": "^1.0.3",
