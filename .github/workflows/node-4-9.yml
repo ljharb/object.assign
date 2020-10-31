@@ -1,0 +1,137 @@
+name: 'Tests: node.js v4-9'
+
+on: [pull_request, push]
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [
+          9.11,
+          8.17,
+          7.10,
+          6.17,
+          5.12,
+          4.9
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dcodeIO/setup-node-nvm@master
+        name: Use Node.js ${{ matrix.node-version }}
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          . /home/runner/mynvm/nvm.sh
+          nvm install-latest-npm
+          export CI_RESET_NODE_VERSION=1
+          case "${{ matrix.node-version }}" in
+            0.5|0.6|0.7|0.9) nvm install --latest-npm 0.8 ;;
+            5.*            ) nvm install --latest-npm 6 ;;
+            6.1|6.2        ) nvm install --latest-npm 6 ;;
+            9.0|9.1|9.2    ) nvm install --latest-npm 9 ;;
+            *              ) export CI_RESET_NODE_VERSION=0 ;;
+          esac
+          npm install
+          if [ "${CI_RESET_NODE_VERSION-}" = 1 ]; then nvm use "${{ matrix.node-version }}"; fi
+      - run: npm run tests-only
+      - run: if [ -f coverage/*.json ]; then bash <(curl -s https://codecov.io/bash) -f coverage/*.json; fi
+  minors:
+    name: 'every other minor'
+    continue-on-error: true
+    if: ${{ !github.head_ref || !startsWith(github.head_ref, 'renovate') }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [
+          9.10,
+          9.9,
+          9.8,
+          9.7,
+          9.6,
+          9.5,
+          9.4,
+          9.3,
+          9.2,
+          9.1,
+          9.0,
+          8.16,
+          8.15,
+          8.14,
+          8.13,
+          8.12,
+          8.11,
+          8.10,
+          8.9,
+          8.8,
+          8.7,
+          8.6,
+          8.5,
+          8.4,
+          8.3,
+          8.2,
+          8.1,
+          8.0,
+          7.9,
+          7.8,
+          7.7,
+          7.6,
+          7.5,
+          7.4,
+          7.3,
+          7.2,
+          7.1,
+          7.0,
+          6.16,
+          6.15,
+          6.14,
+          6.13,
+          6.12,
+          6.11,
+          6.10,
+          6.9,
+          6.8,
+          6.7,
+          6.6,
+          6.5,
+          6.4,
+          6.3,
+          6.2,
+          6.1,
+          6.0,
+          5.11,
+          5.10,
+          5.9,
+          5.8,
+          5.7,
+          5.6,
+          5.5,
+          5.4,
+          5.3,
+          5.2,
+          5.1,
+          5.0,
+          4.8,
+          4.7,
+          4.6,
+          4.5,
+          4.4,
+          4.3,
+          4.2,
+          4.1,
+          4.0
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dcodeIO/setup-node-nvm@master
+        name: Use Node.js ${{ matrix.node-version }}
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: . /home/runner/mynvm/nvm.sh && nvm install-latest-npm
+      - run: npm install
+      - run: npm run tests-only
+      - run: if [ -f coverage/*.json ]; then bash <(curl -s https://codecov.io/bash) -f coverage/*.json; fi

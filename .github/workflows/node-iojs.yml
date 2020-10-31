@@ -1,0 +1,64 @@
+name: 'Tests: io.js'
+
+on: [pull_request, push]
+
+jobs:
+  latest:
+    name: 'each major, latest minor'
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [
+          iojs-v3.3,
+          iojs-v2.5,
+          iojs-v1.8
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dcodeIO/setup-node-nvm@master
+        name: Use Node.js ${{ matrix.node-version }}
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: . /home/runner/mynvm/nvm.sh && nvm install-latest-npm
+      - run: npm install
+      - run: npm run tests-only
+      - run: if [ -f coverage/*.json ]; then bash <(curl -s https://codecov.io/bash) -f coverage/*.json; fi
+  minors:
+    name: 'every other minor'
+    continue-on-error: true
+    if: ${{ !github.head_ref || !startsWith(github.head_ref, 'renovate') }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [
+          iojs-v3.2,
+          iojs-v3.1,
+          iojs-v3.0,
+          iojs-v2.4,
+          iojs-v2.3,
+          iojs-v2.2,
+          iojs-v2.1,
+          iojs-v2.0,
+          iojs-v1.7,
+          iojs-v1.6,
+          iojs-v1.5,
+          iojs-v1.4,
+          iojs-v1.3,
+          iojs-v1.2,
+          iojs-v1.1,
+          iojs-v1.0
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dcodeIO/setup-node-nvm@master
+        name: Use Node.js ${{ matrix.node-version }}
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: . /home/runner/mynvm/nvm.sh && nvm install-latest-npm
+      - run: npm install
+      - run: npm run tests-only
+      - run: if [ -f coverage/*.json ]; then bash <(curl -s https://codecov.io/bash) -f coverage/*.json; fi

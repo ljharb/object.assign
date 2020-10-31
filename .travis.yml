@@ -4,20 +4,14 @@ os:
   - linux
 import:
   - ljharb/travis-ci:node/0.x/all.yml
-  - ljharb/travis-ci:node/minors/iojs.yml
-  - ljharb/travis-ci:node/minors/LTS-active.yml
+  - ljharb/travis-ci:node/minors/10.yml
+  - ljharb/travis-ci:node/minors/11.yml
+  - ljharb/travis-ci:node/minors/12.yml
+  - ljharb/travis-ci:node/minors/13.yml
+  - ljharb/travis-ci:node/minors/14.yml
   - ljharb/travis-ci:node/minors/15.yml
   - ljharb/travis-ci:node/pretest.yml
   - ljharb/travis-ci:node/posttest.yml
-node_js:
-  - "13"
-  - "11"
-  - "9"
-  - "8"
-  - "7"
-  - "6"
-  - "5"
-  - "4"
 script:
    - 'if [ -n "${SES-}" ]; then npm run test:ses; fi'
 matrix:
