@@ -1,4 +1,4 @@
-name: 'Tests: node.js (io.js)'
+name: 'Tests: node.js'
 
 on: [pull_request, push]
 
@@ -12,7 +12,7 @@ jobs:
       - uses: ljharb/actions/node/matrix@main
         id: set-matrix
         with:
-          preset: 'iojs'
+          preset: '>=4'
 
   latest:
     needs: [matrix]
@@ -42,13 +42,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ljharb/actions/node/run@main
-        name: 'npm install && npm run tests-only'
         with:
           node-version: ${{ matrix.node-version }}
           command: 'tests-only'
 
   node:
-    name: 'io.js'
+    name: 'node 4+'
     needs: [latest, minors]
     runs-on: ubuntu-latest
     steps:
