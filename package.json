@@ -46,18 +46,18 @@
 	},
 	"devDependencies": {
 		"@es-shims/api": "^2.1.2",
-		"@ljharb/eslint-config": "^17.2.0",
-		"aud": "^1.1.2",
+		"@ljharb/eslint-config": "^17.5.0",
+		"aud": "^1.1.3",
 		"browserify": "^16.5.2",
-		"eslint": "^7.12.1",
+		"eslint": "^7.18.0",
 		"for-each": "^0.3.3",
-		"functions-have-names": "^1.2.1",
+		"functions-have-names": "^1.2.2",
 		"has": "^1.0.3",
 		"is": "^3.3.0",
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
-		"ses": "^0.11.0",
-		"tape": "^5.0.1"
+		"ses": "^0.11.1",
+		"tape": "^5.1.1"
 	},
 	"testling": {
 		"files": "test/index.js",
