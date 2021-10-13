@@ -15,6 +15,7 @@ jobs:
       - run: npm run pretest
 
   posttest:
+    if: false
     runs-on: ubuntu-latest
 
     steps:
