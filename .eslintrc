@@ -3,8 +3,9 @@
 
 	"extends": "@ljharb",
 
+	"ignorePatterns": ["dist/"],
+
 	"rules": {
-		"complexity": [2, 19],
 		"id-length": [2, { "min": 1, "max": 30 }],
 		"max-statements": [2, 33],
 		"max-statements-per-line": [2, { "max": 2 }],

@@ -19,7 +19,8 @@
 		"test:ses": "node test/ses-compat",
 		"lint": "eslint .",
 		"build": "mkdir -p dist && browserify browserShim.js > dist/browser.js",
-		"prepublish": "safe-publish-latest && npm run build"
+		"prepublishOnly": "safe-publish-latest && npm run build",
+		"prepublish": "not-in-publish || npm run prepublishOnly"
 	},
 	"repository": {
 		"type": "git",
@@ -45,19 +46,19 @@
 		"object-keys": "^1.1.1"
 	},
 	"devDependencies": {
-		"@es-shims/api": "^2.1.2",
-		"@ljharb/eslint-config": "^17.6.0",
+		"@es-shims/api": "^2.2.3",
+		"@ljharb/eslint-config": "^20.1.0",
 		"aud": "^1.1.5",
 		"browserify": "^16.5.2",
-		"eslint": "^7.27.0",
+		"eslint": "^8.4.1",
 		"for-each": "^0.3.3",
 		"functions-have-names": "^1.2.2",
 		"has": "^1.0.3",
 		"is": "^3.3.0",
 		"nyc": "^10.3.2",
-		"safe-publish-latest": "^1.1.4",
+		"safe-publish-latest": "^2.0.0",
 		"ses": "^0.11.1",
-		"tape": "^5.2.2"
+		"tape": "^5.3.2"
 	},
 	"testling": {
 		"files": "test/index.js",
