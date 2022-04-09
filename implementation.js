@@ -2,9 +2,6 @@
 
 // modified from https://github.com/es-shims/es6-shim
 var keys = require('object-keys');
-var canBeObject = function (obj) {
-	return typeof obj !== 'undefined' && obj !== null;
-};
 var hasSymbols = require('has-symbols/shams')();
 var callBound = require('call-bind/callBound');
 var toObject = Object;
@@ -14,7 +11,7 @@ var originalGetSymbols = hasSymbols ? Object.getOwnPropertySymbols : null;
 
 // eslint-disable-next-line no-unused-vars
 module.exports = function assign(target, source1) {
-	if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
+	if (target == null) { throw new TypeError('target must be an object'); }
 	var objTarget = toObject(target);
 	var s, source, i, props, syms, value, key;
 	for (s = 1; s < arguments.length; ++s) {
