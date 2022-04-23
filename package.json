@@ -55,6 +55,7 @@
 		"functions-have-names": "^1.2.3",
 		"has": "^1.0.3",
 		"is": "^3.3.0",
+		"mock-property": "^1.0.0",
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^2.0.0",
 		"ses": "^0.11.1",
