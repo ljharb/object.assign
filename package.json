@@ -55,6 +55,7 @@
 		"for-each": "^0.3.3",
 		"functions-have-names": "^1.2.3",
 		"has": "^1.0.3",
+		"has-strict-mode": "^1.0.1",
 		"is": "^3.3.0",
 		"mock-property": "^1.0.0",
 		"npmignore": "^0.3.0",
