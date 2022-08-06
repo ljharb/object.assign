@@ -11,3 +11,5 @@ yarn.lock
 # Coverage reports
 .nyc_output/
 coverage/
+
+.npmignore
