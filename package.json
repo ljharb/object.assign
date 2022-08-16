@@ -89,7 +89,8 @@
 		"ignore": [
 			".github/workflows",
 			"bower.json",
-			"browserShim.js"
+			"browserShim.js",
+			"!dist/"
 		]
 	}
 }
