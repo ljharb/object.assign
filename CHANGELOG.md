@@ -1,3 +1,7 @@
+4.1.4 / 2022-08-16
+==================
+  * [meta] fix `npmignore` integration (#83)
+
 4.1.3 / 2022-08-05
 ==================
   * [Refactor] make steps closer to actual spec
