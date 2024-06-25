@@ -62,7 +62,7 @@
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^2.0.0",
 		"ses": "^0.11.1",
-		"tape": "^5.7.5"
+		"tape": "^5.8.1"
 	},
 	"testling": {
 		"files": "test/index.js",
