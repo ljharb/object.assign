@@ -41,9 +41,9 @@
 		"shim"
 	],
 	"dependencies": {
-		"call-bind": "^1.0.7",
+		"call-bind": "^1.0.8",
 		"define-properties": "^1.2.1",
-		"has-symbols": "^1.0.3",
+		"has-symbols": "^1.1.0",
 		"object-keys": "^1.1.1"
 	},
 	"devDependencies": {
