@@ -47,7 +47,7 @@
 		"object-keys": "^1.1.1"
 	},
 	"devDependencies": {
-		"@es-shims/api": "^2.5.0",
+		"@es-shims/api": "^2.5.1",
 		"@ljharb/eslint-config": "^21.1.1",
 		"browserify": "^16.5.2",
 		"eslint": "=8.8.0",
@@ -61,7 +61,7 @@
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^2.0.0",
 		"ses": "^0.11.1",
-		"tape": "^5.8.1"
+		"tape": "^5.9.0"
 	},
 	"testling": {
 		"files": "test/index.js",
