@@ -132,5 +132,5 @@ Simply clone the repo, `npm install`, and run `npm test`
 [downloads-url]: http://npm-stat.com/charts.html?package=object.assign
 [codecov-image]: https://codecov.io/gh/ljharb/object.assign/branch/main/graphs/badge.svg
 [codecov-url]: https://app.codecov.io/gh/ljharb/object.assign/
-[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/object.assign
+[actions-image]: https://img.shields.io/github/check-runs/ljharb/object.assign/main
 [actions-url]: https://github.com/ljharb/object.assign/actions
